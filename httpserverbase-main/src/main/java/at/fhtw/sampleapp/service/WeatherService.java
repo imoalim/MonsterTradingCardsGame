@@ -4,7 +4,7 @@ import at.fhtw.httpserver.http.HttpStatus;
 import at.fhtw.httpserver.server.Request;
 import at.fhtw.httpserver.server.Response;
 
-public class WeatherService extends AbstractService {
+public class WeatherService extends at.fhtw.sampleapp.service.AbstractService {
 
     public WeatherService() {
 
