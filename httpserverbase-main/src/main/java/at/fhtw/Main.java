@@ -22,8 +22,8 @@ public class Main {
     {
         Router router = new Router();
         router.addService("/users", new UsersController());
-        //router.addService("/weather", new WeatherController());
-        //router.addService("/echo", new EchoController());
+        router.addService("/weather", new WeatherController());
+        router.addService("/echo", new EchoController());
 
         return router;
     }
