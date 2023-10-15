@@ -1,6 +1,10 @@
 package at.fhtw.httpserver.server;
 
+
+//import at.fhtw.httpserver.http.ContentType;
+import at.fhtw.httpserver.http.ContentType;
 import at.fhtw.httpserver.http.Method;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -101,4 +105,10 @@ public class Request {
     public void setPathParts(List<String> pathParts) {
         this.pathParts = pathParts;
     }
+
+    public ContentType getContentType() {
+        return ContentType.JSON; // Hier gib den gewünschten Content Type aus deinem Enum zurück
+    }
+
+
 }
