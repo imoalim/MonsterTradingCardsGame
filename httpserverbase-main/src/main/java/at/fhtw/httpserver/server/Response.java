@@ -33,7 +33,7 @@ public class Response {
                 "Date: " + localDatetime + "\r\n" +
                 "Expires: " + localDatetime + "\r\n" +
                 "Content-Type: " + this.contentType + "\r\n" +
-                //"Content-Length: " + this.content.length() + "\r\n" +
+                "Content-Length: " + this.content.length() + "\r\n" +
                 "\r\n" +
                 this.content;
     }

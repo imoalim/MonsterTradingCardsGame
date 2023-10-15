@@ -3,14 +3,10 @@ Accept: application/json
 
 ###
 POST http://localhost:10001/users
-Accept: application/json
 Content-Type: application/json
 
 {
   "id": 1,
   "username": "admin",
-  "password": "admin",
-  "email": "anpch@example.com",
-  "firstname": "admin",
-  "lastname": "admin"
+  "password": "admin"
 }

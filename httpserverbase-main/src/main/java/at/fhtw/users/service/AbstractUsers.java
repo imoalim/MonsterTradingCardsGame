@@ -2,10 +2,10 @@ package at.fhtw.users.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-public abstract class UserAbstractService {
+public abstract class AbstractUsers {
     private final ObjectMapper objectMapper;
 
-    public UserAbstractService() {
+    public AbstractUsers() {
         this.objectMapper = new ObjectMapper();
     }
 

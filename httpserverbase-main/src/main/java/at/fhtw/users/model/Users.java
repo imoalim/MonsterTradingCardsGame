@@ -9,24 +9,16 @@ public class Users {
     private String username;
     @JsonAlias({"Password"})
     private String password;
-    @JsonAlias({"Email"})
-    private String email;
-    @JsonAlias({"Firstname"})
-    private String firstname;
-    @JsonAlias({"Lastname"})
-    private String lastname;
+
 
 
     public Users() {
     }
 
-    public Users(Integer id, String username, String password, String email, String firstname, String lastname) {
+    public Users(Integer id, String username, String password) {
         this.id = id;
         this.username = username;
         this.password = password;
-        this.email = email;
-        this.firstname = firstname;
-        this.lastname = lastname;
     }
 
     public Integer getId() {
@@ -53,27 +45,4 @@ public class Users {
         this.password = password;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getFirstname() {
-        return firstname;
-    }
-
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
-    }
-
-    public String getLastname() {
-        return lastname;
-    }
-
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
-    }
 }
