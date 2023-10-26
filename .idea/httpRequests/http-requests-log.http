@@ -1,0 +1,378 @@
+POST http://localhost:10001/users
+Content-Type: application/json
+Content-Length: 58
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "id": 1,
+  "username": "test",
+  "password": "admin"
+}
+
+<> 2023-10-26T124452.201.json
+
+###
+
+POST http://localhost:10001/users
+Content-Type: application/json
+Content-Length: 58
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "id": 1,
+  "username": "test",
+  "password": "admin"
+}
+
+<> 2023-10-25T154338.201.json
+
+###
+
+POST http://localhost:10001/users
+Content-Type: application/json
+Content-Length: 58
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "id": 1,
+  "username": "test",
+  "password": "admin"
+}
+
+<> 2023-10-17T163847.201.json
+
+###
+
+GET http://localhost:10001/users
+Accept: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-10-17T163834.200.json
+
+###
+
+POST http://localhost:10001/users
+Content-Type: application/json
+Content-Length: 58
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "id": 1,
+  "username": "test",
+  "password": "admin"
+}
+
+<> 2023-10-16T210010.201.json
+
+###
+
+GET http://localhost:10001/users
+Accept: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-10-16T205826.200.json
+
+###
+
+POST http://localhost:10001/users
+Content-Type: application/json
+Content-Length: 59
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "id": 1,
+  "username": "admin",
+  "password": "admin"
+}
+
+<> 2023-10-15T201259.201.json
+
+###
+
+GET http://localhost:10001/users
+Accept: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-10-15T200148.200.json
+
+###
+
+GET http://localhost:10001/users
+Accept: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-10-15T200105.200.json
+
+###
+
+GET http://localhost:10001/users
+Accept: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-10-15T195957.200.json
+
+###
+
+POST http://localhost:10001/users
+Content-Type: application/json
+Content-Length: 59
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "id": 1,
+  "username": "admin",
+  "password": "admin"
+}
+
+<> 2023-10-15T195907.201.json
+
+###
+
+POST https://httpbin.org/post
+Content-Type: application/json
+Content-Length: 37
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "id": 999,
+  "value": "content"
+}
+
+<> 2023-10-15T195821.200.json
+
+###
+
+POST https://httpbin.org/post
+Content-Type: application/json
+Content-Length: 37
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "id": 999,
+  "value": "content"
+}
+
+<> 2023-10-15T194921.200.json
+
+###
+
+POST http://localhost:10001/users
+Content-Type: application/json
+Content-Length: 59
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "id": 1,
+  "username": "admin",
+  "password": "admin"
+}
+
+<> 2023-10-15T194506.201.json
+
+###
+
+POST http://localhost:10001/users
+Content-Type: application/json
+Content-Length: 59
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "id": 1,
+  "username": "admin",
+  "password": "admin"
+}
+
+<> 2023-10-15T194504.201.json
+
+###
+
+POST http://localhost:10001/users
+Content-Type: application/json
+Content-Length: 59
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "id": 1,
+  "username": "admin",
+  "password": "admin"
+}
+
+<> 2023-10-15T194453.201.json
+
+###
+
+POST https://httpbin.org/post
+Content-Type: application/json
+Content-Length: 37
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "id": 999,
+  "value": "content"
+}
+
+<> 2023-10-15T194400.200.json
+
+###
+
+POST https://httpbin.org/post
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 20
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+id=999&value=content
+
+<> 2023-10-15T194340.200.json
+
+###
+
+POST https://httpbin.org/post
+Content-Type: application/json
+Content-Length: 37
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "id": 999,
+  "value": "content"
+}
+
+<> 2023-10-15T194313.200.json
+
+###
+
+POST http://localhost:10001/users
+Accept: application/json
+Content-Type: application/json
+Content-Length: 59
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "id": 1,
+  "username": "admin",
+  "password": "admin"
+}
+
+<> 2023-10-15T194206.201.json
+
+###
+
+POST http://localhost:10001/users
+Accept: application/json
+Content-Type: application/json
+Content-Length: 59
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "id": 1,
+  "username": "admin",
+  "password": "admin"
+}
+
+<> 2023-10-15T194155.201.json
+
+###
+
+POST http://localhost:10001/users
+Accept: application/json
+Content-Type: application/json
+Content-Length: 138
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "id": 1,
+  "username": "admin",
+  "password": "admin",
+  "email": "anpch@example.com",
+  "firstname": "admin",
+  "lastname": "admin"
+}
+
+<> 2023-10-15T194110.400.json
+
+###
+
+POST http://localhost:10001/users
+Accept: application/json
+Content-Type: application/json
+Content-Length: 138
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "id": 1,
+  "username": "admin",
+  "password": "admin",
+  "email": "anpch@example.com",
+  "firstname": "admin",
+  "lastname": "admin"
+}
+
+<> 2023-10-15T115511.201.json
+
+###
+
+GET http://localhost:10001/users
+Accept: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-10-15T115147.200.json
+
+###
+
+GET http://localhost:10001/users
+Accept: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-10-15T114850.200.json
+
+###
+

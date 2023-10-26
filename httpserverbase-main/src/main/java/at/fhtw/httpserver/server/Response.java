@@ -8,7 +8,7 @@ import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class Response {
-    private int status;
+    private final int status;
     private String message;
     private String contentType;
     private String content;
@@ -33,7 +33,7 @@ public class Response {
                 "Date: " + localDatetime + "\r\n" +
                 "Expires: " + localDatetime + "\r\n" +
                 "Content-Type: " + this.contentType + "\r\n" +
-                "Content-Length: " + this.content.length() + "\r\n" +
+                // "Content-Length: " + this.content.length() + "\r\n" +
                 "\r\n" +
                 this.content;
     }
