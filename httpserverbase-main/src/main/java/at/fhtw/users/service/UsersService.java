@@ -24,16 +24,8 @@ public class UsersService extends AbstractUsers {
     // GET /users
     public Response getUsers() {
         try (Connection connection = db.connectToDatabase()) {
-
-            List<Users> userList = db.readFromDatabase(connection, "users");
-            String json;
-
-            try {
-                json = this.getObjectMapper().writeValueAsString(userList);
-            } catch (JsonProcessingException e) {
-                throw new RuntimeException(e);
-            }
-
+            List<Users> userList = db.readAllUsersFromDB(connection, "users");
+            String json = convertUserListToJson(userList);
             return new Response(HttpStatus.OK, ContentType.JSON, json);
         } catch (SQLException e) {
             throw new RuntimeException("Fehler bei der Datenbankverbindung: " + e.getMessage(), e);
@@ -42,9 +34,28 @@ public class UsersService extends AbstractUsers {
 
 
     // GET /users/:id
-    public Response getUser(String id) {
-        return new Response(HttpStatus.NOT_IMPLEMENTED);
+    public Response getUser(String username) {
+        try (Connection connection = db.connectToDatabase()) {
+            List<Users> userList = db.readSpecificUserFromDB(connection, "users", username);
+            String json = convertUserListToJson(userList);
+            if(json == null){
+                System.out.println("There is no user" + username );
+            }
+            return new Response(HttpStatus.OK, ContentType.JSON, json);
+        } catch (SQLException e) {
+            throw new RuntimeException("Fehler bei der Datenbankverbindung: " + e.getMessage(), e);
+        }
     }
+
+    private String convertUserListToJson(List<Users> userList) {
+        try {
+            return this.getObjectMapper().writeValueAsString(userList);
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
     // POST /users
     public Response addUser(Request request) {
         try {
