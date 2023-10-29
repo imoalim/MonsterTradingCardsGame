@@ -29,13 +29,13 @@ public class DbFunctions {
         }
         return conn;
     }
-    public List<Users> readFromDatabase(Connection conn, String tableName) throws SQLException {
+    public List<Users> readUsersFromDB(Connection conn, String tableName, String whereClause) throws SQLException {
         Statement statement;
         ResultSet rs = null;
         List<Users> userList = new ArrayList<>(); // Liste für Benutzerdaten
 
         try {
-            String query = String.format("SELECT * FROM %s", tableName);
+            String query = String.format("SELECT * FROM %s WHERE %s", tableName, whereClause);
             statement = conn.createStatement();
             rs = statement.executeQuery(query);
 
@@ -58,5 +58,15 @@ public class DbFunctions {
 
         return userList; // Die Liste der Benutzerdaten zurückgeben
     }
+
+    public List<Users> readAllUsersFromDB(Connection conn, String tableName) throws SQLException {
+        return readUsersFromDB(conn, tableName, "1=1"); // 1=1 ist immer wahr, daher werden alle Datensätze ausgewählt
+    }
+
+    public List<Users> readSpecificUserFromDB(Connection conn, String tableName, String userName) throws SQLException {
+        String whereClause = String.format("username = '%s'", userName);
+        return readUsersFromDB(conn, tableName, whereClause);
+    }
+
 
 }
