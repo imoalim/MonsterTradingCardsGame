@@ -41,7 +41,6 @@ public class DbFunctions {
 
             while (rs.next()) {
                 Users user = new Users(
-                        rs.getInt("id"),
                         rs.getString("username"),
                         rs.getString("password")
                 );

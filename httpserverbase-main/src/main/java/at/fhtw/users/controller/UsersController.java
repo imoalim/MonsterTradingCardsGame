@@ -10,7 +10,7 @@ import at.fhtw.httpserver.server.RestController;
 import at.fhtw.users.service.UsersService;
 
 
-public class UsersController implements RestController{
+public class UsersController implements RestController {
     private final UsersService usersService;
 
     public UsersController() {
@@ -26,6 +26,10 @@ public class UsersController implements RestController{
             return this.usersService.getUsers();
         } else if (request.getMethod() == Method.POST) {
             return this.usersService.addUser(request);
+        } else if (request.getMethod() == Method.PUT) {
+            return this.usersService.updateUser(request.getPathParts().get(1), request);
+        } else if (request.getMethod() == Method.DELETE) {
+            return this.usersService.deleteUser(request.getPathParts().get(1));
         }
 
         return new Response(

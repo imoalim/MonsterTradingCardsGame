@@ -2,31 +2,23 @@ package at.fhtw.users.model;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 
+import java.util.UUID;
+
 public class Users {
-    @JsonAlias({"id"})
-    private Integer id;
+
     @JsonAlias({"Username"})
     private String username;
     @JsonAlias({"Password"})
     private String password;
 
 
-
     public Users() {
     }
 
-    public Users(Integer id, String username, String password) {
-        this.id = id;
+    public Users(String username, String password) {
+
         this.username = username;
         this.password = password;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public String getUsername() {
