@@ -1,12 +1,12 @@
-package at.fhtw.users.service;
+package at.fhtw.mtcg_app.service;
 
 
-import at.fhtw.db.DbFunctions;
+import at.fhtw.utils.DB_utils;
 import at.fhtw.httpserver.http.ContentType;
 import at.fhtw.httpserver.http.HttpStatus;
 import at.fhtw.httpserver.server.Request;
 import at.fhtw.httpserver.server.Response;
-import at.fhtw.users.model.Users;
+import at.fhtw.mtcg_app.model.Users;
 import com.fasterxml.jackson.core.JsonProcessingException;
 
 
@@ -20,7 +20,7 @@ public class UsersService extends AbstractUsers {
     public UsersService() {
 
     }
-    final DbFunctions db = new DbFunctions();
+    final DB_utils db = new DB_utils();
 
     // GET /users
     public Response getUsers() {

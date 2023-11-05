@@ -1,16 +1,16 @@
-package at.fhtw.db;
-import at.fhtw.users.model.Users;
+package at.fhtw.utils;
+import at.fhtw.mtcg_app.model.Users;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DbFunctions {
+public class DB_utils {
     private static final String DB_URL = "jdbc:postgresql://localhost:5432/swen1db";
     private static final String DB_USER = "postgres";
     private static final String DB_PASSWORD = "pwd123456";
 
-    public DbFunctions() {
+    public DB_utils() {
         // Konstruktor ohne automatische Verbindungsherstellung
     }
 

@@ -1,4 +1,4 @@
-package at.fhtw.users.service;
+package at.fhtw.mtcg_app.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 

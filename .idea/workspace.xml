@@ -5,12 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a1ca4aa7-fbc2-454b-b904-4aedcff25401" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/DataAccessException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/DatabaseManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/UnitOfWork.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/UserDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/repository/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/repository/UserRepositoryImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/db/DbFunctions.java" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/db/DbFunctions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/users/controller/UsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/users/controller/UsersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/users/model/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/users/model/Users.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/users/service/UsersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/users/service/UsersService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/db/DbFunctions.java" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/utils/DB_utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/users/controller/UsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/controller/UsersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/users/model/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/model/Users.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/users/service/AbstractUsers.java" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/service/AbstractUsers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/users/service/UsersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/service/UsersService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +28,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTTP Request" />
+        <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -29,6 +38,11 @@
     <option name="NEW_BASE" value="main" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
@@ -39,6 +53,29 @@
 }</component>
   <component name="GitToolBoxStore">
     <option name="projectConfigVersion" value="5" />
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="refactoring" />
+                    <option name="lastUsedInstant" value="1699211641" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="main" />
+                    <option name="lastUsedInstant" value="1699211640" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
   </component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
@@ -72,34 +109,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/imoalim/Documents/Java/MonsterTradingCardsGame",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Facets",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "Docker",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/imoalim/Documents/Java/MonsterTradingCardsGame&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Facets&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;Docker&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ],
-    "com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect": [
-      "PostgreSQL"
+    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect&quot;: [
+      &quot;PostgreSQL&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -231,6 +268,7 @@
       <workItem from="1697390861337" duration="3385000" />
       <workItem from="1697482533173" duration="4297000" />
       <workItem from="1698226341493" duration="28147000" />
+      <workItem from="1699211571172" duration="684000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1697280385227</created>
@@ -343,27 +381,27 @@
           <option name="timeStamp" value="2" />
         </breakpoint>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/users/controller/UsersController.java</url>
+          <url>file://$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/controller/UsersController.java</url>
           <line>20</line>
-          <properties class="at.fhtw.users.controller.UsersController" method="handleRequest">
+          <properties class="at.fhtw.mtcg_app.controller.UsersController" method="handleRequest">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/users/service/UsersService.java</url>
+          <url>file://$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/service/UsersService.java</url>
           <line>106</line>
-          <properties class="at.fhtw.users.service.UsersService" method="updateUser">
+          <properties class="at.fhtw.mtcg_app.service.UsersService" method="updateUser">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/users/service/UsersService.java</url>
+          <url>file://$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/service/UsersService.java</url>
           <line>148</line>
-          <properties class="at.fhtw.users.service.UsersService" method="deleteUser">
+          <properties class="at.fhtw.mtcg_app.service.UsersService" method="deleteUser">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
