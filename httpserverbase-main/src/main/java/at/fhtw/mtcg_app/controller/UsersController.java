@@ -1,4 +1,4 @@
-package at.fhtw.users.controller;
+package at.fhtw.mtcg_app.controller;
 
 
 import at.fhtw.httpserver.http.ContentType;
@@ -7,7 +7,7 @@ import at.fhtw.httpserver.http.Method;
 import at.fhtw.httpserver.server.Request;
 import at.fhtw.httpserver.server.Response;
 import at.fhtw.httpserver.server.RestController;
-import at.fhtw.users.service.UsersService;
+import at.fhtw.mtcg_app.service.UsersService;
 
 
 public class UsersController implements RestController {

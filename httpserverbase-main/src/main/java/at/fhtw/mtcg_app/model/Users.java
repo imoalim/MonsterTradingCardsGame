@@ -1,8 +1,6 @@
-package at.fhtw.users.model;
+package at.fhtw.mtcg_app.model;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
-
-import java.util.UUID;
 
 public class Users {
 

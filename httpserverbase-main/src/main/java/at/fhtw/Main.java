@@ -4,7 +4,7 @@ import at.fhtw.httpserver.server.Server;
 import at.fhtw.httpserver.utils.Router;
 import at.fhtw.sampleapp.controller.EchoController;
 import at.fhtw.sampleapp.controller.WeatherController;
-import at.fhtw.users.controller.UsersController;
+import at.fhtw.mtcg_app.controller.UsersController;
 
 import java.io.IOException;
 
