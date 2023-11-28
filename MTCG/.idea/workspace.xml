@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0452b6de-2972-4b39-bbdc-8973e742c4e9" name="Changes" comment="needs">
+      <change afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/MonsterTradingCards.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../httpserverbase-main/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../httpserverbase-main/Initialize-Postgres-Script.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../httpserverbase-main/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../httpserverbase-main/UML_Diagram/chatuml-diagram.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../httpserverbase-main/UML_Diagram/classDiagram_description.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../httpserverbase-main/httpserver.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../httpserverbase-main/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../httpserverbase-main/rest-api.http" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../httpserverbase-main/src/main/java/at/fhtw/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../httpserverbase-main/src/main/java/at/fhtw/httpserver/http/ContentType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../httpserverbase-main/src/main/java/at/fhtw/httpserver/http/HttpStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../httpserverbase-main/src/main/java/at/fhtw/httpserver/http/Method.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../httpserverbase-main/src/main/java/at/fhtw/httpserver/server/HeaderMap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../httpserverbase-main/src/main/java/at/fhtw/httpserver/server/Request.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../httpserverbase-main/src/main/java/at/fhtw/httpserver/server/Response.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../httpserverbase-main/src/main/java/at/fhtw/httpserver/server/RestController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../httpserverbase-main/src/main/java/at/fhtw/httpserver/server/Server.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../httpserverbase-main/src/main/java/at/fhtw/httpserver/utils/RequestBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../httpserverbase-main/src/main/java/at/fhtw/httpserver/utils/RequestHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../httpserverbase-main/src/main/java/at/fhtw/httpserver/utils/Router.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../httpserverbase-main/src/main/java/at/fhtw/mtcg_app/controller/UsersController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../httpserverbase-main/src/main/java/at/fhtw/mtcg_app/model/Users.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/DataAccessException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/DatabaseManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/UnitOfWork.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/UserDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/repository/UserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/repository/UserRepositoryImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../httpserverbase-main/src/main/java/at/fhtw/mtcg_app/service/AbstractUsers.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../httpserverbase-main/src/main/java/at/fhtw/mtcg_app/service/UsersService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../httpserverbase-main/src/main/java/at/fhtw/utils/DB_utils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../httpserverbase-main/src/test/java/at/fhtw/httpserver/server/RequestTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../httpserverbase-main/src/test/java/at/fhtw/httpserver/server/ServerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../httpserverbase-main/src/test/java/at/fhtw/httpserver/utils/RequestBuilderTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../httpserverbase-main/src/test/java/at/fhtw/sampleapp/controller/weather/WeatherTest.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2XlpF4p1I9VT8vBDmZT9PZHTvBv" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/imoalim/Documents/Java/SWEN/MTCG",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/httpserverbase-main/src/main/java" />
+      <recent name="$PROJECT_DIR$/httpserverbase-main" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="at.fhtw.Main" />
+      <module name="httpserver" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="at.fhtw.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0452b6de-2972-4b39-bbdc-8973e742c4e9" name="Changes" comment="" />
+      <created>1699213413983</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1699213413983</updated>
+      <workItem from="1699213415069" duration="74000" />
+      <workItem from="1699509935537" duration="114000" />
+      <workItem from="1699510099291" duration="89000" />
+      <workItem from="1699510193865" duration="11712000" />
+      <workItem from="1701113016849" duration="1058000" />
+      <workItem from="1701196146903" duration="4940000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.RuntimeException" package="java.lang" />
+          <option name="timeStamp" value="10" />
+        </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/repository/UserRepositoryImpl.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
