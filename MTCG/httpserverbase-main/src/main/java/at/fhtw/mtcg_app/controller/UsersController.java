@@ -27,9 +27,9 @@ public class UsersController implements RestController {
         } else if (request.getMethod() == Method.POST) {
             return this.usersService.addUser(request);
         } else if (request.getMethod() == Method.PUT) {
-            return this.usersService.updateUser(request.getPathParts().get(1), request);
+            //return this.usersService.updateUser(request.getPathParts().get(1), request);
         } else if (request.getMethod() == Method.DELETE) {
-            return this.usersService.deleteUser(request.getPathParts().get(1));
+            //return this.usersService.deleteUser(request.getPathParts().get(1));
         }
 
         return new Response(

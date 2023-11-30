@@ -11,38 +11,26 @@ public class DBUtils {
     private static final String DB_USER = "postgres";
     private static final String DB_PASSWORD = "pwd123456";
 
-    private static Connection connection;
-
     public DBUtils() {
         // Konstruktor ohne automatische Verbindungsherstellung
     }
 
-    public static Connection getConnection() {
-        if (connection == null) {
-            try {
-                connection = connectToDatabase();
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            }
-        }
-        return connection;
+    public static Connection getConnection() throws SQLException {
+        return connectToDatabase();
     }
 
-    public static Connection connectToDatabase() throws SQLException {
+    private static Connection connectToDatabase() throws SQLException {
         Connection conn;
         try {
             conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
-            if (conn != null) {
-                System.out.println("Verbindung zur Datenbank hergestellt");
-            } else {
-                System.out.println("Konnte keine Verbindung zur Datenbank herstellen");
-            }
+            System.out.println("Verbindung zur Datenbank hergestellt");
         } catch (SQLException e) {
             System.out.println("Fehler bei der Verbindung zur Datenbank: " + e.getMessage());
-            throw new SQLException(e);
+            throw e; // Werfen Sie die ursprüngliche SQLException, um mehr Details zu erhalten
         }
         return conn;
     }
+
 
     public static List<User> readUsersFromDB(Connection conn, String tableName, String whereClause) throws SQLException {
         Statement statement;

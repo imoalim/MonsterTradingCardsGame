@@ -9,23 +9,14 @@ import at.fhtw.httpserver.http.HttpStatus;
 import at.fhtw.httpserver.server.Request;
 import at.fhtw.httpserver.server.Response;
 import at.fhtw.mtcg_app.model.User;
-import com.fasterxml.jackson.core.JsonProcessingException;
-
-
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.sql.PreparedStatement;
-import java.util.List;
 
 public class UsersService extends AbstractUsers {
 
-    private UserRepository userRepository = new UserRepositoryImpl();
+    private final UserRepository userRepository = new UserRepositoryImpl();
     public UsersService() {
 
     }
-
-    final DBUtils db = new DBUtils();
 
     //sosll sql nicht wissen
     // GET /users
@@ -53,7 +44,6 @@ public class UsersService extends AbstractUsers {
     // POST /users
     public Response addUser(Request request) {
         try {
-            //da ist schon der fehler bei newUser
             User newUser = this.getObjectMapper().readValue(request.getBody(), User.class);
             newUser  =  userRepository.createUser(newUser);
             // Überprüfe, ob die Benutzerdaten gültig sind
@@ -79,7 +69,7 @@ public class UsersService extends AbstractUsers {
             return new Response(HttpStatus.BAD_REQUEST, ContentType.JSON, "Fehler beim Parsen des Benutzers");
         }
     }
-
+/*
 
     // PUT /users/:id
     public Response updateUser(String username, Request request) {
@@ -146,5 +136,5 @@ public class UsersService extends AbstractUsers {
         }
     }
 
-
+*/
 }
