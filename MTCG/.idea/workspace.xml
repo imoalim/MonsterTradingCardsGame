@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0452b6de-2972-4b39-bbdc-8973e742c4e9" name="Changes" comment="#11 fixed bug">
+    <list default="true" id="0452b6de-2972-4b39-bbdc-8973e742c4e9" name="Changes" comment="started with #12">
       <change afterPath="$PROJECT_DIR$/.idea/git_toolbox_prj.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/controller/SessionController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/repository/SessionRepository.java" afterDir="false" />
@@ -196,7 +196,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="after connecting to db, it disconnects (Verbindung zur Datenbank hergestellt&#10;                                        java.lang.RuntimeException: Fehler bei der Datenbankverbindung: This connection has been closed.)" />
     <MESSAGE value="#11 fixed bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="#11 fixed bug" />
+    <MESSAGE value="started with #12" />
+    <option name="LAST_COMMIT_MESSAGE" value="started with #12" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
