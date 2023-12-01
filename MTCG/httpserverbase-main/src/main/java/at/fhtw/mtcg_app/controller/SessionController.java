@@ -5,9 +5,10 @@ import at.fhtw.httpserver.http.HttpStatus;
 import at.fhtw.httpserver.http.Method;
 import at.fhtw.httpserver.server.Request;
 import at.fhtw.httpserver.server.Response;
+import at.fhtw.httpserver.server.RestController;
 import at.fhtw.mtcg_app.service.SessionService;
 
-public class SessionController {
+public class SessionController implements RestController {
 
     private final SessionService sessionService;
 
@@ -18,7 +19,7 @@ public class SessionController {
     @Override
     public Response handleRequest(Request request) {
         if (request.getMethod() == Method.POST) {
-            return this.sessionService.islogged(request);
+            // return this.sessionService.islogged(request);
         }
         return new Response(
                 HttpStatus.NOT_IMPLEMENTED,

@@ -22,7 +22,7 @@ public class SessionService extends AbstractUsers {
 
     //check if user is logged in
     //POST request
-    public Response checkLogin(Request request) {
+   /* public Response checkLogin(Request request) {
         try {
             User newUser = this.getObjectMapper().readValue(request.getBody(), User.class);
 
@@ -32,3 +32,5 @@ public class SessionService extends AbstractUsers {
             return new Response(HttpStatus.BAD_REQUEST, ContentType.JSON, "Fehler beim Parsen des Benutzers");
         }
     }
+    */
+}
