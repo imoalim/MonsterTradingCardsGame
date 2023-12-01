@@ -5,19 +5,42 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a1ca4aa7-fbc2-454b-b904-4aedcff25401" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/DataAccessException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/DatabaseManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/UnitOfWork.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/UserDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/repository/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/repository/UserRepositoryImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/db/DbFunctions.java" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/utils/DB_utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/users/controller/UsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/controller/UsersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/users/model/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/model/Users.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/users/service/AbstractUsers.java" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/service/AbstractUsers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/users/service/UsersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/service/UsersService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/Initialize-Postgres-Script.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/UML_Diagram/chatuml-diagram.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/UML_Diagram/classDiagram_description.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/httpserver.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/rest-api.http" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/httpserver/http/ContentType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/httpserver/http/HttpStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/httpserver/http/Method.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/httpserver/server/HeaderMap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/httpserver/server/Request.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/httpserver/server/Response.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/httpserver/server/RestController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/httpserver/server/Server.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/httpserver/utils/RequestBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/httpserver/utils/RequestHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/httpserver/utils/Router.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/controller/UsersController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/model/Users.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/DataAccessException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/DatabaseManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/UnitOfWork.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/UserDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/repository/UserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/repository/UserRepositoryImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/service/AbstractUsers.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/service/UsersService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/utils/DB_utils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/test/java/at/fhtw/httpserver/server/RequestTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/test/java/at/fhtw/httpserver/server/ServerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/test/java/at/fhtw/httpserver/utils/RequestBuilderTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/test/java/at/fhtw/sampleapp/controller/weather/WeatherTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,9 +165,13 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw" />
       <recent name="$PROJECT_DIR$/httpserverbase-main/UML_Diagram" />
       <recent name="$PROJECT_DIR$/httpserverbase-main" />
       <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="at.fhtw.sampleapp.controller" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
@@ -268,7 +295,8 @@
       <workItem from="1697390861337" duration="3385000" />
       <workItem from="1697482533173" duration="4297000" />
       <workItem from="1698226341493" duration="28147000" />
-      <workItem from="1699211571172" duration="684000" />
+      <workItem from="1699211571172" duration="1724000" />
+      <workItem from="1699213377905" duration="17000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1697280385227</created>
@@ -340,7 +368,21 @@
       <option name="project" value="LOCAL" />
       <updated>1698597507146</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="refactoring; Errors on UsersService">
+      <created>1699212413451</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1699212413451</updated>
+    </task>
+    <task id="LOCAL-00012" summary="updated Sample app">
+      <created>1699213025861</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1699213025861</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -351,7 +393,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -366,7 +420,10 @@
     <MESSAGE value="update server" />
     <MESSAGE value="Resolved #2 &#10;#3 GET &amp; ADD USER INTO DATABASE, finished" />
     <MESSAGE value="#3 modified Get users" />
-    <option name="LAST_COMMIT_MESSAGE" value="#3 modified Get users" />
+    <MESSAGE value="refactoring" />
+    <MESSAGE value="refactoring; Errors on UsersService" />
+    <MESSAGE value="updated Sample app" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated Sample app" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
