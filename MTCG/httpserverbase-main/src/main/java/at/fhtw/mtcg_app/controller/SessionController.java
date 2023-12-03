@@ -19,7 +19,7 @@ public class SessionController implements RestController {
     @Override
     public Response handleRequest(Request request) {
         if (request.getMethod() == Method.POST) {
-            // return this.sessionService.islogged(request);
+            return this.sessionService.checkLogin(request);
         }
         return new Response(
                 HttpStatus.NOT_IMPLEMENTED,

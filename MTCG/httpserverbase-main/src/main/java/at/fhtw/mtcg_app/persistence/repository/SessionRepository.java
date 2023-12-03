@@ -1,11 +1,11 @@
 package at.fhtw.mtcg_app.persistence.repository;
 
-import at.fhtw.httpserver.server.Request;
+
 import at.fhtw.mtcg_app.model.User;
 
-import java.util.Collection;
+import java.sql.SQLException;
 
 
 public interface SessionRepository {
-    User islogged(String username);
+    boolean islogged(User user) throws SQLException;
 }

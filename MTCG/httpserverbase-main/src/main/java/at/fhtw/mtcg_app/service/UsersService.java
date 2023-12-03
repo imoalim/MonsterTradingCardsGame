@@ -3,7 +3,6 @@ package at.fhtw.mtcg_app.service;
 
 import at.fhtw.mtcg_app.persistence.repository.UserRepository;
 import at.fhtw.mtcg_app.persistence.repository.UserRepositoryImpl;
-import at.fhtw.utils.DBUtils;
 import at.fhtw.httpserver.http.ContentType;
 import at.fhtw.httpserver.http.HttpStatus;
 import at.fhtw.httpserver.server.Request;

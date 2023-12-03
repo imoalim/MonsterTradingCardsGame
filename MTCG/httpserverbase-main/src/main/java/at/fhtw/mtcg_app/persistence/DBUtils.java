@@ -1,4 +1,4 @@
-package at.fhtw.utils;
+package at.fhtw.mtcg_app.persistence;
 
 import at.fhtw.mtcg_app.model.User;
 
@@ -44,6 +44,8 @@ public class DBUtils {
 
             while (rs.next()) {
                 User user = new User(
+                        rs.getString("token"),
+                        rs.getString("id"),
                         rs.getString("username"),
                         rs.getString("password")
                 );

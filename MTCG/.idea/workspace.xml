@@ -4,18 +4,37 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0452b6de-2972-4b39-bbdc-8973e742c4e9" name="Changes" comment="started with #12">
+    <list default="true" id="0452b6de-2972-4b39-bbdc-8973e742c4e9" name="Changes" comment="Sessions/login implemented #12">
+      <change afterPath="$PROJECT_DIR$/.idea/sqlDataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c122b2de-fa33-4e23-bc44-9457a5121c27.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c122b2de-fa33-4e23-bc44-9457a5121c27.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/controller/SessionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/controller/SessionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/repository/SessionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/repository/SessionRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/repository/SessionRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/repository/SessionRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/repository/UserRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/repository/UserRepositoryImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/service/SessionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/service/SessionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/service/UsersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/service/UsersService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/utils/DBUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/DBUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/mtcg_app/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/mtcg_app/model/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/mtcg_app/persistence/repository/UserRepositoryImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/mtcg_app/persistence/repository/UserRepositoryImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/mtcg_app/service/UsersService.class" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/mtcg_app/service/UsersService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/utils/DBUtils.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseLocalColorSettings">
+    <colors>
+      <entry key="24deb501-c8af-43be-af1c-62198a479c1d" value="Yellow" />
+    </colors>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -136,99 +155,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="DjangoTestsConfigurationType">
-      <module name="httpserver" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="TARGET" value="" />
-      <option name="SETTINGS_FILE" value="" />
-      <option name="CUSTOM_SETTINGS" value="false" />
-      <option name="USE_OPTIONS" value="false" />
-      <option name="OPTIONS" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="httpserver" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="httpserver" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="PyBehaveRunConfigurationType" factoryName="Behave">
-      <module name="httpserver" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="ADDITIONAL_ARGS" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
-      <module name="httpserver" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="Python.FlaskServer">
-      <module name="httpserver" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="launchJavascriptDebuger" value="false" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="Tox" factoryName="Tox">
-      <module name="httpserver" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
@@ -251,6 +177,8 @@
       <workItem from="1701196146903" duration="5314000" />
       <workItem from="1701335069543" duration="10222000" />
       <workItem from="1701359441991" duration="1196000" />
+      <workItem from="1701630516134" duration="8000" />
+      <workItem from="1701630529388" duration="5381000" />
     </task>
     <task id="LOCAL-00001" summary="after connecting to db, it disconnects (Verbindung zur Datenbank hergestellt&#10;                                        java.lang.RuntimeException: Fehler bei der Datenbankverbindung: This connection has been closed.)">
       <created>1701201659038</created>
@@ -259,7 +187,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701201659038</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Sessions/login have to implemented #12">
+      <created>1701431036614</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1701431036614</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -280,26 +215,35 @@
     <MESSAGE value="after connecting to db, it disconnects (Verbindung zur Datenbank hergestellt&#10;                                        java.lang.RuntimeException: Fehler bei der Datenbankverbindung: This connection has been closed.)" />
     <MESSAGE value="#11 fixed bug" />
     <MESSAGE value="started with #12" />
-    <option name="LAST_COMMIT_MESSAGE" value="started with #12" />
+    <MESSAGE value="Sessions/login have to implemented #12" />
+    <MESSAGE value="Sessions/login implemented #12" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sessions/login implemented #12" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <breakpoint enabled="true" type="java-exception">
+        <breakpoint type="java-exception">
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="2" />
         </breakpoint>
-        <breakpoint enabled="true" type="java-exception">
+        <breakpoint type="java-exception">
           <properties class="java.lang.RuntimeException" package="java.lang" />
           <option name="timeStamp" value="10" />
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/repository/UserRepositoryImpl.java</url>
-          <line>46</line>
-          <option name="timeStamp" value="14" />
+          <url>file://$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/repository/SessionRepositoryImpl.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
     </breakpoint-manager>
   </component>
 </project>

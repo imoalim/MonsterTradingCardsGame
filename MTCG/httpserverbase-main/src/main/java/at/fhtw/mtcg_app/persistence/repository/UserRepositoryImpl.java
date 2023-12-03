@@ -1,10 +1,7 @@
 package at.fhtw.mtcg_app.persistence.repository;
 
-import at.fhtw.httpserver.http.ContentType;
-import at.fhtw.httpserver.http.HttpStatus;
-import at.fhtw.httpserver.server.Response;
 import at.fhtw.mtcg_app.model.User;
-import at.fhtw.utils.DBUtils;
+import at.fhtw.mtcg_app.persistence.DBUtils;
 
 import java.sql.*;
 import java.util.Collection;
