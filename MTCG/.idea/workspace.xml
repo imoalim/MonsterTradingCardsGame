@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0452b6de-2972-4b39-bbdc-8973e742c4e9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/model/Package.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c122b2de-fa33-4e23-bc44-9457a5121c27.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c122b2de-fa33-4e23-bc44-9457a5121c27/storage_v2/_src_/database/swen1db.Qls_lA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c122b2de-fa33-4e23-bc44-9457a5121c27/storage_v2/_src_/database/swen1db.Qls_lA/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c122b2de-fa33-4e23-bc44-9457a5121c27/storage_v2/_src_/database/swen1db.Qls_lA/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c122b2de-fa33-4e23-bc44-9457a5121c27/storage_v2/_src_/database/swen1db.Qls_lA/schema/public.abK9xQ.meta" beforeDir="false" />
+    <list default="true" id="0452b6de-2972-4b39-bbdc-8973e742c4e9" name="Changes" comment="Packages model">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/MonsterTradingCards.sh" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/MonsterTradingCards.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +32,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="refactoring" />
+        <entry key="$PROJECT_DIR$/.." value="stable" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -58,12 +53,12 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
-                    <option name="branchName" value="#11_db_bug_fix" />
-                    <option name="lastUsedInstant" value="1701336987" />
+                    <option name="branchName" value="#14_packages" />
+                    <option name="lastUsedInstant" value="1701801828" />
                   </RecentBranch>
                   <RecentBranch>
-                    <option name="branchName" value="refactoring" />
-                    <option name="lastUsedInstant" value="1701336986" />
+                    <option name="branchName" value="stable" />
+                    <option name="lastUsedInstant" value="1701801813" />
                   </RecentBranch>
                 </list>
               </option>
@@ -145,6 +140,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -166,7 +163,8 @@
       <workItem from="1701359441991" duration="1196000" />
       <workItem from="1701630516134" duration="8000" />
       <workItem from="1701630529388" duration="5663000" />
-      <workItem from="1701695717217" duration="2027000" />
+      <workItem from="1701695717217" duration="3579000" />
+      <workItem from="1701801326741" duration="8637000" />
     </task>
     <task id="LOCAL-00001" summary="after connecting to db, it disconnects (Verbindung zur Datenbank hergestellt&#10;                                        java.lang.RuntimeException: Fehler bei der Datenbankverbindung: This connection has been closed.)">
       <created>1701201659038</created>
@@ -189,7 +187,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701636225410</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Packages model">
+      <created>1701699506395</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1701699506395</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,7 +205,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="stable" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -212,7 +229,8 @@
     <MESSAGE value="started with #12" />
     <MESSAGE value="Sessions/login have to implemented #12" />
     <MESSAGE value="Sessions/login implemented #12" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sessions/login implemented #12" />
+    <MESSAGE value="Packages model" />
+    <option name="LAST_COMMIT_MESSAGE" value="Packages model" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -226,11 +244,6 @@
           <properties class="java.lang.RuntimeException" package="java.lang" />
           <option name="timeStamp" value="10" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/repository/SessionRepositoryImpl.java</url>
-          <line>20</line>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
