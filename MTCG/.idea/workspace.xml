@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0452b6de-2972-4b39-bbdc-8973e742c4e9" name="Changes" comment="#15 missing response 409">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/DBUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/DBUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/repository/PackagesRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/repository/PackagesRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/repository/PackagesRepoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/repository/PackagesRepoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/service/AbstracService.java" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/service/AbstractService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/service/PackageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/service/PackageService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/service/SessionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/service/SessionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/service/UsersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/service/UsersService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/mtcg_app/service/UsersService.class" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/mtcg_app/service/UsersService.class" afterDir="false" />
-    </list>
+    <list default="true" id="0452b6de-2972-4b39-bbdc-8973e742c4e9" name="Changes" comment="#15 missing response 409" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,7 +24,7 @@
     </option>
   </component>
   <component name="Git.Rebase.Settings">
-    <option name="NEW_BASE" value="main" />
+    <option name="NEW_BASE" value="#14_packages" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
