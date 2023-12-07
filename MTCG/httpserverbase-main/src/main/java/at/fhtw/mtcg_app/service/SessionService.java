@@ -11,7 +11,7 @@ import at.fhtw.mtcg_app.persistence.repository.SessionRepositoryImpl;
 import java.io.IOException;
 import java.sql.SQLException;
 
-public class SessionService extends AbstracService {
+public class SessionService extends AbstractService {
 
     private final SessionRepository sessionRepository = new SessionRepositoryImpl();
 

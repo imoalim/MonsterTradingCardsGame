@@ -10,7 +10,7 @@ import at.fhtw.httpserver.server.Response;
 import at.fhtw.mtcg_app.model.User;
 import java.io.IOException;
 
-public class UsersService extends AbstracService {
+public class UsersService extends AbstractService {
 
     private final UserRepository userRepository = new UserRepositoryImpl();
 
