@@ -23,7 +23,7 @@ public class DBUtils {
         Connection conn;
         try {
             conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
-            System.out.println("Verbindung zur Datenbank hergestellt");
+            //System.out.println("Verbindung zur Datenbank hergestellt");
         } catch (SQLException e) {
             System.out.println("Fehler bei der Verbindung zur Datenbank: " + e.getMessage());
             throw e; // Werfen Sie die ursprüngliche SQLException, um mehr Details zu erhalten
