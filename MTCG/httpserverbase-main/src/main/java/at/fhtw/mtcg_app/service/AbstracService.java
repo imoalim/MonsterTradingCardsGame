@@ -3,10 +3,10 @@ package at.fhtw.mtcg_app.service;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-public abstract class AbstractUsers {
+public abstract class AbstracService {
     private final ObjectMapper objectMapper;
 
-    public AbstractUsers() {
+    public AbstracService() {
         this.objectMapper = new ObjectMapper();
     }
 
