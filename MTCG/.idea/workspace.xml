@@ -5,17 +5,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0452b6de-2972-4b39-bbdc-8973e742c4e9" name="Changes" comment="#14">
-      <change afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/controller/PackageController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/repository/PackagesRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/repository/PackagesRepoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/service/PackageService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/MonsterTradingCards.sh" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/MonsterTradingCards.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/model/Package.java" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/model/Package.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/service/AbstractUsers.java" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/service/AbstracService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/service/SessionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/service/SessionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/service/UsersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/service/UsersService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/httpserver/http/ContentType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/httpserver/http/HttpStatus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/httpserver/http/Method.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/httpserver/server/HeaderMap.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/httpserver/server/Request.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/httpserver/server/Response.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/httpserver/server/RestController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/httpserver/server/Server.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/httpserver/utils/RequestBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/httpserver/utils/RequestHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/httpserver/utils/Router.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/mtcg_app/controller/UsersController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/mtcg_app/model/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/mtcg_app/persistence/UnitOfWork.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/mtcg_app/persistence/UserDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/mtcg_app/persistence/repository/UserRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/mtcg_app/persistence/repository/UserRepositoryImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/mtcg_app/service/UsersService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/sampleapp/controller/EchoController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/sampleapp/controller/WeatherController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/sampleapp/model/Weather.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/sampleapp/persistence/DataAccessException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/sampleapp/persistence/DatabaseManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/sampleapp/persistence/UnitOfWork.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/sampleapp/persistence/WeatherDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/sampleapp/persistence/repository/WeatherRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/sampleapp/persistence/repository/WeatherRepositoryImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/sampleapp/service/AbstractService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/sampleapp/service/WeatherService.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,31 +119,35 @@
       </MavenGeneralSettings>
     </option>
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectId" id="2XlpF4p1I9VT8vBDmZT9PZHTvBv" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/imoalim/Documents/Java/SWEN/MTCG&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/imoalim/Documents/Java/SWEN/MTCG",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/" />
@@ -203,7 +227,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701699506395</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="#14">
+      <created>1702115258003</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1702115258003</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -220,7 +251,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="stable" />
+                        <option value="feature" />
                       </list>
                     </value>
                   </entry>
