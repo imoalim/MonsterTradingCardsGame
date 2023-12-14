@@ -18,7 +18,10 @@ public class PackageController implements RestController {
 
     @Override
     public Response handleRequest(Request request) {
-        if (request.getMethod() == Method.POST) {
+        if (request.getMethod() == Method.POST &&
+                request.getPathParts().size() > 1) {
+            return this.packageService.acquireCards(request);
+        } else if (request.getMethod() == Method.POST) {
             return this.packageService.createCards(request);
         }
         return new Response(

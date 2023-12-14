@@ -4,6 +4,18 @@ import com.fasterxml.jackson.annotation.JsonAlias;
 
 
 public class User {
+    public User() {
+    }
+
+    public User(String token, String id, String username, String password, int coins) {
+
+        this.token = token;
+        this.id = id;
+
+        this.username = username;
+        this.password = password;
+        this.coins = coins;
+    }
 
     @JsonAlias({"Id"})
     private String id;
@@ -14,6 +26,9 @@ public class User {
     private String username;
     @JsonAlias({"Password"})
     private String password;
+
+    @JsonAlias({"Coins"})
+    private int coins;
 
     private boolean userExists;
 
@@ -26,17 +41,14 @@ public class User {
         return userExists;
     }
 
-    public User() {
+    public int getCoins() {
+        return coins;
     }
 
-    public User(String token, String id, String username, String password) {
-
-        this.token = token;
-        this.id = id;
-
-        this.username = username;
-        this.password = password;
+    public void setCoins(int coins) {
+        this.coins = coins;
     }
+
 
     public String getUsername() {
         return username;

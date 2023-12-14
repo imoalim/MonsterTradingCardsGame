@@ -45,9 +45,10 @@ public class DBUtils {
             while (rs.next()) {
                 User user = new User(
                         rs.getString("token"),
-                        rs.getString("id"),
+                        rs.getString("user_id"),
                         rs.getString("username"),
-                        rs.getString("password")
+                        rs.getString("password"),
+                        rs.getInt("coins")
                 );
                 userList.add(user); // Benutzer zur Liste hinzufügen
             }
@@ -67,7 +68,7 @@ public class DBUtils {
         return readUsersFromDB(conn, tableName, "1=1"); // 1=1 ist immer wahr, daher werden alle Datensätze ausgewählt
     }
 
-    public List<User> readSpecificUserFromDB(Connection conn, String tableName, String userName) throws SQLException {
+    public static List<User> readSpecificUserFromDB(Connection conn, String tableName, String userName) throws SQLException {
         String whereClause = String.format("username = '%s'", userName);
         return readUsersFromDB(conn, tableName, whereClause);
     }

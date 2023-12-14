@@ -20,6 +20,7 @@ public class Router {
 
     public RestController resolve(String route)
     {
+        //System.out.printf("Resolved route: %s\n", route);
         return this.serviceRegistry.get(route);
     }
 }

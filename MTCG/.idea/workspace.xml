@@ -4,38 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0452b6de-2972-4b39-bbdc-8973e742c4e9" name="Changes" comment="#14">
+    <list default="true" id="0452b6de-2972-4b39-bbdc-8973e742c4e9" name="Changes" comment="#16 check status on Transaction  #24 done">
+      <change afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/model/Card.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/repository/Token.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/service/AuthHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/service/ExceptionHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/httpserver/http/ContentType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/httpserver/http/HttpStatus.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/httpserver/http/Method.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/httpserver/server/HeaderMap.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/httpserver/server/Request.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/httpserver/server/Response.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/httpserver/server/RestController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/httpserver/server/Server.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/httpserver/utils/RequestBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/httpserver/utils/RequestHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/httpserver/utils/Router.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/mtcg_app/controller/UsersController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/mtcg_app/model/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/mtcg_app/persistence/UnitOfWork.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/mtcg_app/persistence/UserDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/mtcg_app/persistence/repository/UserRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/mtcg_app/persistence/repository/UserRepositoryImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/mtcg_app/service/UsersService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/sampleapp/controller/EchoController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/sampleapp/controller/WeatherController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/sampleapp/model/Weather.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/sampleapp/persistence/DataAccessException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/sampleapp/persistence/DatabaseManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/sampleapp/persistence/UnitOfWork.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/sampleapp/persistence/WeatherDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/sampleapp/persistence/repository/WeatherRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/sampleapp/persistence/repository/WeatherRepositoryImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/sampleapp/service/AbstractService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/sampleapp/service/WeatherService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/httpserver/utils/Router.java" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/httpserver/utils/Router.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/controller/PackageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/controller/PackageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/model/Package.java" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/model/Package.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/DBUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/DBUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/repository/PackagesRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/repository/PackagesRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/repository/PackagesRepoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/repository/PackagesRepoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/service/PackageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/service/PackageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/httpserver/utils/Router.class" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/httpserver/utils/Router.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/mtcg_app/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/mtcg_app/model/User.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,13 +41,16 @@
       </list>
     </option>
   </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="main" />
+  </component>
   <component name="Git.Rebase.Settings">
     <option name="NEW_BASE" value="main" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="stable" />
+        <entry key="$PROJECT_DIR$/.." value="feature" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -82,12 +71,16 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
-                    <option name="branchName" value="#14_packages" />
-                    <option name="lastUsedInstant" value="1701801828" />
+                    <option name="branchName" value="#16_acquire_cards" />
+                    <option name="lastUsedInstant" value="1702118419" />
                   </RecentBranch>
                   <RecentBranch>
-                    <option name="branchName" value="stable" />
-                    <option name="lastUsedInstant" value="1701801813" />
+                    <option name="branchName" value="feature" />
+                    <option name="lastUsedInstant" value="1702118348" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="main" />
+                    <option name="lastUsedInstant" value="1702118302" />
                   </RecentBranch>
                 </list>
               </option>
@@ -127,27 +120,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/imoalim/Documents/Java/SWEN/MTCG",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/imoalim/Documents/Java/SWEN/MTCG&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/" />
@@ -175,6 +168,8 @@
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -198,6 +193,11 @@
       <workItem from="1701630529388" duration="5663000" />
       <workItem from="1701695717217" duration="3579000" />
       <workItem from="1701801326741" duration="8637000" />
+      <workItem from="1702147241775" duration="8922000" />
+      <workItem from="1702234505108" duration="5789000" />
+      <workItem from="1702317691399" duration="12572000" />
+      <workItem from="1702407501483" duration="1918000" />
+      <workItem from="1702556067569" duration="10012000" />
     </task>
     <task id="LOCAL-00001" summary="after connecting to db, it disconnects (Verbindung zur Datenbank hergestellt&#10;                                        java.lang.RuntimeException: Fehler bei der Datenbankverbindung: This connection has been closed.)">
       <created>1701201659038</created>
@@ -271,7 +271,8 @@
     <MESSAGE value="Sessions/login implemented #12" />
     <MESSAGE value="Packages model" />
     <MESSAGE value="#14" />
-    <option name="LAST_COMMIT_MESSAGE" value="#14" />
+    <MESSAGE value="#16 check status on Transaction  #24 done" />
+    <option name="LAST_COMMIT_MESSAGE" value="#16 check status on Transaction  #24 done" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -285,6 +286,47 @@
           <properties class="java.lang.RuntimeException" package="java.lang" />
           <option name="timeStamp" value="10" />
         </breakpoint>
+        <breakpoint type="java-exception">
+          <properties class="java.lang.IllegalArgumentException" package="java.lang" />
+          <option name="timeStamp" value="12" />
+        </breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/service/PackageService.java</url>
+          <line>23</line>
+          <properties class="at.fhtw.mtcg_app.service.PackageService" method="createCards">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/service/PackageService.java</url>
+          <line>53</line>
+          <properties class="at.fhtw.mtcg_app.service.PackageService" method="acquireCards">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/repository/PackagesRepoImpl.java</url>
+          <line>111</line>
+          <properties class="at.fhtw.mtcg_app.persistence.repository.PackagesRepoImpl" method="acquirePackagesForUser">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/service/PackageService.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/repository/PackagesRepoImpl.java</url>
+          <line>69</line>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">

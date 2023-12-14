@@ -25,7 +25,7 @@ public class Main {
         router.addService("/users", new UsersController());
         router.addService("/sessions", new SessionController());
         router.addService("/packages", new PackageController());
-        //router.addService("/weather", new WeatherController());
+        router.addService("/transactions", new PackageController());
         router.addService("/echo", new EchoController());
 
         return router;
