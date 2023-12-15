@@ -5,22 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0452b6de-2972-4b39-bbdc-8973e742c4e9" name="Changes" comment="#16 check status on Transaction  #24 done">
-      <change afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/model/Card.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/repository/Token.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/service/AuthHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/service/ExceptionHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/httpserver/utils/Router.java" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/httpserver/utils/Router.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/controller/PackageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/controller/PackageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/model/Package.java" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/model/Package.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/DBUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/DBUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/repository/PackagesRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/repository/PackagesRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/repository/PackagesRepoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/repository/PackagesRepoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/service/PackageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/service/PackageService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/httpserver/utils/Router.class" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/httpserver/utils/Router.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/mtcg_app/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/mtcg_app/model/User.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -72,7 +58,7 @@
                 <list>
                   <RecentBranch>
                     <option name="branchName" value="#16_acquire_cards" />
-                    <option name="lastUsedInstant" value="1702118419" />
+                    <option name="lastUsedInstant" value="1702639666" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="feature" />
@@ -251,7 +237,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="feature" />
+                        <option value="#16_acquire_cards" />
                       </list>
                     </value>
                   </entry>
@@ -272,7 +258,8 @@
     <MESSAGE value="Packages model" />
     <MESSAGE value="#14" />
     <MESSAGE value="#16 check status on Transaction  #24 done" />
-    <option name="LAST_COMMIT_MESSAGE" value="#16 check status on Transaction  #24 done" />
+    <MESSAGE value="don't ignore workspace.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="don't ignore workspace.xml" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -293,7 +280,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/service/PackageService.java</url>
           <line>23</line>
-          <properties class="at.fhtw.mtcg_app.service.PackageService" method="createCards">
+          <properties class="at.fhtw.mtcg_app.service.PackageService">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
@@ -302,7 +289,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/service/PackageService.java</url>
           <line>53</line>
-          <properties class="at.fhtw.mtcg_app.service.PackageService" method="acquireCards">
+          <properties class="at.fhtw.mtcg_app.service.PackageService">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
@@ -311,7 +298,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/repository/PackagesRepoImpl.java</url>
           <line>111</line>
-          <properties class="at.fhtw.mtcg_app.persistence.repository.PackagesRepoImpl" method="acquirePackagesForUser">
+          <properties class="at.fhtw.mtcg_app.persistence.repository.PackagesRepoImpl">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
