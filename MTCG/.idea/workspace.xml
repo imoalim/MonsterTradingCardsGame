@@ -7,7 +7,6 @@
     <list default="true" id="0452b6de-2972-4b39-bbdc-8973e742c4e9" name="Changes" comment="#16 check status on Transaction  #24 done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/httpserverbase-main/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/mtcg_app/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/mtcg_app/model/User.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,12 +30,12 @@
     <option name="BRANCH" value="main" />
   </component>
   <component name="Git.Rebase.Settings">
-    <option name="NEW_BASE" value="main" />
+    <option name="NEW_BASE" value="#16_acquire_cards" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="feature" />
+        <entry key="$PROJECT_DIR$/.." value="#16_acquire_cards" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -57,16 +56,16 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
+                    <option name="branchName" value="main" />
+                    <option name="lastUsedInstant" value="1702757853" />
+                  </RecentBranch>
+                  <RecentBranch>
                     <option name="branchName" value="#16_acquire_cards" />
-                    <option name="lastUsedInstant" value="1702639666" />
+                    <option name="lastUsedInstant" value="1702757773" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="feature" />
                     <option name="lastUsedInstant" value="1702118348" />
-                  </RecentBranch>
-                  <RecentBranch>
-                    <option name="branchName" value="main" />
-                    <option name="lastUsedInstant" value="1702118302" />
                   </RecentBranch>
                 </list>
               </option>
@@ -280,7 +279,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/service/PackageService.java</url>
           <line>23</line>
-          <properties class="at.fhtw.mtcg_app.service.PackageService">
+          <properties class="at.fhtw.mtcg_app.service.PackageService" method="createCards">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
@@ -289,7 +288,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/service/PackageService.java</url>
           <line>53</line>
-          <properties class="at.fhtw.mtcg_app.service.PackageService">
+          <properties class="at.fhtw.mtcg_app.service.PackageService" method="acquireCards">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
@@ -298,7 +297,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/repository/PackagesRepoImpl.java</url>
           <line>111</line>
-          <properties class="at.fhtw.mtcg_app.persistence.repository.PackagesRepoImpl">
+          <properties class="at.fhtw.mtcg_app.persistence.repository.PackagesRepoImpl" method="acquirePackagesForUser">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
