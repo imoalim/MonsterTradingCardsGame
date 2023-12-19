@@ -67,11 +67,11 @@ public class PackagesRepoImpl implements PackagesRepo {
             if (maxPackages <= 0) {
                 throw new ExceptionHandler("Not enough coins");
             }
-            deductUserCoins(connection, packageCost);
             acquirePackagesForUser(connection);
+            deductUserCoins(connection, packageCost);
             return true;
         } catch (SQLException ex) {
-            throw new RuntimeException("Database error: " + ex.getMessage(), ex);
+            throw new RuntimeException(ex.getMessage(), ex);
         }
     }
 
@@ -110,21 +110,35 @@ public class PackagesRepoImpl implements PackagesRepo {
     }
 
     private void acquirePackagesForUser(Connection connection) throws SQLException {
-        // Select a random available package
-        PreparedStatement getOneRandomPackage = connection.prepareStatement(
-                "SELECT package_id FROM packages WHERE status = 'available' ORDER BY RANDOM() LIMIT 1");
+        try {
+            connection.setAutoCommit(false);
 
-        ResultSet rs = getOneRandomPackage.executeQuery();
-        if (rs.next()) {
-            int packageId = rs.getInt("package_id");
-            recordTransaction(connection, userId, packageId);
-            // Update the status to 'assigned' or other status to indicate it's no longer available
-            updatePackageStatus(connection, packageId, "assigned");
-        } else {
-            // No available packages
-            throw new SQLException("No available packages found");
+            PreparedStatement getOneRandomPackage = connection.prepareStatement(
+                    "SELECT package_id FROM packages WHERE status = 'available' ORDER BY RANDOM() LIMIT 1");
+
+            ResultSet rs = getOneRandomPackage.executeQuery();
+            if (rs.next()) {
+                int packageId = rs.getInt("package_id");
+                recordTransaction(connection, userId, packageId);
+                updatePackageStatus(connection, packageId, "assigned");
+                connection.commit();
+            } else {
+                connection.rollback();
+                throw new SQLException("No available packages found");
+            }
+        } catch (SQLException ex) {
+            if (connection != null) {
+                connection.rollback();
+            }
+            throw ex;
+        } finally {
+            // Turn auto-commit back on after the transaction is complete
+            if (connection != null && !connection.getAutoCommit()) {
+                connection.setAutoCommit(true);
+            }
         }
     }
+
 
     private void recordTransaction(Connection connection, int userId, int packageId) throws SQLException {
         // Start transaction

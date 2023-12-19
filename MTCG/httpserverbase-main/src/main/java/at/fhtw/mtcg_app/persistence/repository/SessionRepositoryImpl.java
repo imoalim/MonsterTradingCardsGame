@@ -17,8 +17,10 @@ public class SessionRepositoryImpl implements SessionRepository {
 
             boolean userExists = userList.stream()
                     .anyMatch(user -> user.getUsername().equals(newUser.getUsername()));
+            boolean passwordIsValid = userList.stream()
+                    .anyMatch(user -> user.getPassword().equals(newUser.getPassword()));
 
-            if (userExists) {
+            if (userExists && passwordIsValid) {
                 String userToken = newUser.getUsername() + "-mtcgToken";
                 PreparedStatement statement = connection.prepareStatement(
                         "UPDATE public.users SET token = ? WHERE username = ?");
