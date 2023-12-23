@@ -1,6 +1,7 @@
 package at.fhtw.mtcg_app.service;
 
 
+import at.fhtw.mtcg_app.persistence.UnitOfWork;
 import at.fhtw.mtcg_app.persistence.repository.UserRepository;
 import at.fhtw.mtcg_app.persistence.repository.UserRepositoryImpl;
 import at.fhtw.httpserver.http.ContentType;
@@ -8,32 +9,25 @@ import at.fhtw.httpserver.http.HttpStatus;
 import at.fhtw.httpserver.server.Request;
 import at.fhtw.httpserver.server.Response;
 import at.fhtw.mtcg_app.model.User;
+
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class UsersService extends AbstractService {
 
-    private final UserRepository userRepository = new UserRepositoryImpl();
+    private final UserRepository userRepository;
 
     public UsersService() {
-
+        userRepository = new UserRepositoryImpl(new UnitOfWork());
     }
-
-    //sosll sql nicht wissen
-    // GET /users
-   /* public Response getUsers() {
-        try (Connection connection = db.connectToDatabase()) {
-            List<User> userList = db.readAllUsersFromDB(connection, "users");
-            String json = convertUserListToJson(userList);
-            return new Response(HttpStatus.OK, ContentType.JSON, json);
-        } catch (SQLException e) {
-            throw new RuntimeException("Fehler bei der Datenbankverbindung: " + e.getMessage(), e);
-        }
-    }*/
-
-
     // GET /users/:id
     public Response getUser(String username) {
-        User user = userRepository.findByUsername(username);
+        User user;
+        try {
+            user = userRepository.findByUsername(username);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
         if (user == null) {
             System.out.println("There is no user" + username);
         }
@@ -55,11 +49,11 @@ public class UsersService extends AbstractService {
                 } else {
                     //int rowsAffected = preparedStatement.executeUpdate();
                     //if (rowsAffected > 0) {
-                        // Erfolgreich eingefügt
-                        String userJson = this.convertToJson(newUser);
-                        String responseContent = "{ \"user\": " + userJson + " }";
-                        return new Response(HttpStatus.CREATED, ContentType.JSON, responseContent);
-                    } /*else {
+                    // Erfolgreich eingefügt
+                    String userJson = this.convertToJson(newUser);
+                    String responseContent = "{ \"user\": " + userJson + " }";
+                    return new Response(HttpStatus.CREATED, ContentType.JSON, responseContent);
+                } /*else {
                         // Fehler beim Einfügen
                         return new Response(HttpStatus.INTERNAL_SERVER_ERROR, ContentType.JSON, "Fehler beim Einfügen des Benutzers");
                     }
@@ -67,6 +61,8 @@ public class UsersService extends AbstractService {
         } catch (IOException e) {
             e.printStackTrace();
             return new Response(HttpStatus.BAD_REQUEST, ContentType.JSON, "Fehler beim Parsen des Benutzers");
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
     }
 /*

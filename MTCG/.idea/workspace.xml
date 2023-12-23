@@ -4,14 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0452b6de-2972-4b39-bbdc-8973e742c4e9" name="Changes" comment="fixed errors">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_12_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_12_7_1.xml" afterDir="false" />
+    <list default="true" id="0452b6de-2972-4b39-bbdc-8973e742c4e9" name="Changes" comment="added UnitOfWork patern and Singleton Pattern for the db">
+      <change afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/DataAccessException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/DatabaseManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/MonsterTradingCards.sh" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/MonsterTradingCards.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/httpserver.iml" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/httpserver.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/model/Package.java" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/model/Package.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/DBUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/UnitOfWork.java" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/UnitOfWork.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/repository/PackagesRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/repository/PackagesRepo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/repository/PackagesRepoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/repository/PackagesRepoImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/repository/SessionRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/repository/SessionRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/repository/UserRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/repository/UserRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/service/PackageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/service/PackageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/service/SessionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/service/SessionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/service/UsersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/service/UsersService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/mtcg_app/persistence/UnitOfWork.class" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/mtcg_app/persistence/UnitOfWork.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/mtcg_app/persistence/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/mtcg_app/persistence/repository/UserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/mtcg_app/persistence/repository/UserRepositoryImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/mtcg_app/persistence/repository/UserRepositoryImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/mtcg_app/service/UsersService.class" beforeDir="false" afterPath="$PROJECT_DIR$/httpserverbase-main/target/classes/at/fhtw/mtcg_app/service/UsersService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,12 +45,12 @@
     <option name="BRANCH" value="main" />
   </component>
   <component name="Git.Rebase.Settings">
-    <option name="NEW_BASE" value="#16_acquire_cards" />
+    <option name="NEW_BASE" value="origin/develop" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="#16_acquire_cards" />
+        <entry key="$PROJECT_DIR$/.." value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -61,16 +71,12 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
+                    <option name="branchName" value="develop" />
+                    <option name="lastUsedInstant" value="1703008870" />
+                  </RecentBranch>
+                  <RecentBranch>
                     <option name="branchName" value="main" />
-                    <option name="lastUsedInstant" value="1702757853" />
-                  </RecentBranch>
-                  <RecentBranch>
-                    <option name="branchName" value="#16_acquire_cards" />
-                    <option name="lastUsedInstant" value="1702757773" />
-                  </RecentBranch>
-                  <RecentBranch>
-                    <option name="branchName" value="feature" />
-                    <option name="lastUsedInstant" value="1702118348" />
+                    <option name="lastUsedInstant" value="1703008646" />
                   </RecentBranch>
                 </list>
               </option>
@@ -138,6 +144,9 @@
       <recent name="$PROJECT_DIR$/httpserverbase-main/src/main/java" />
       <recent name="$PROJECT_DIR$/httpserverbase-main" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="at.fhtw.mtcg_app.persistence" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
@@ -189,6 +198,7 @@
       <workItem from="1702556067569" duration="10012000" />
       <workItem from="1703000028573" duration="770000" />
       <workItem from="1703001566389" duration="6568000" />
+      <workItem from="1703161326289" duration="9788000" />
     </task>
     <task id="LOCAL-00001" summary="after connecting to db, it disconnects (Verbindung zur Datenbank hergestellt&#10;                                        java.lang.RuntimeException: Fehler bei der Datenbankverbindung: This connection has been closed.)">
       <created>1701201659038</created>
@@ -243,19 +253,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="develop" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
@@ -272,7 +270,8 @@
     <MESSAGE value="don't ignore workspace.xml" />
     <MESSAGE value="#16 check status on Transaction  #24 done" />
     <MESSAGE value="fixed errors" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed errors" />
+    <MESSAGE value="added UnitOfWork patern and Singleton Pattern for the db" />
+    <option name="LAST_COMMIT_MESSAGE" value="added UnitOfWork patern and Singleton Pattern for the db" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -292,43 +291,43 @@
         </breakpoint>
         <line-breakpoint type="java-method">
           <url>file://$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/service/PackageService.java</url>
-          <line>23</line>
+          <line>26</line>
           <properties class="at.fhtw.mtcg_app.service.PackageService" method="createCards">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="24" />
         </line-breakpoint>
-        <line-breakpoint type="java-method">
-          <url>file://$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/service/PackageService.java</url>
-          <line>53</line>
-          <properties class="at.fhtw.mtcg_app.service.PackageService" method="acquireCards">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="28" />
-        </line-breakpoint>
-        <line-breakpoint type="java-method">
-          <url>file://$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/repository/PackagesRepoImpl.java</url>
-          <line>111</line>
-          <properties class="at.fhtw.mtcg_app.persistence.repository.PackagesRepoImpl" method="acquirePackagesForUser">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="31" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/repository/PackagesRepoImpl.java</url>
-          <line>59</line>
+          <line>62</line>
           <properties class="at.fhtw.mtcg_app.persistence.repository.PackagesRepoImpl" method="acquireCards">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="32" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/repository/UserRepositoryImpl.java</url>
+          <line>44</line>
+          <properties class="at.fhtw.mtcg_app.persistence.repository.UserRepositoryImpl" method="createUser">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/persistence/repository/PackagesRepoImpl.java</url>
+          <line>110</line>
+          <properties class="at.fhtw.mtcg_app.persistence.repository.PackagesRepoImpl" method="acquirePackagesForUser">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/httpserverbase-main/src/main/java/at/fhtw/mtcg_app/service/PackageService.java</url>
-          <line>37</line>
+          <line>39</line>
           <option name="timeStamp" value="25" />
         </line-breakpoint>
       </breakpoints>

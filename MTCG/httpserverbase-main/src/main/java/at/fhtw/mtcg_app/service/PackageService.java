@@ -6,8 +6,10 @@ import at.fhtw.httpserver.server.Request;
 import at.fhtw.httpserver.server.Response;
 import at.fhtw.mtcg_app.model.Card;
 import at.fhtw.mtcg_app.model.Package;
+import at.fhtw.mtcg_app.persistence.UnitOfWork;
 import at.fhtw.mtcg_app.persistence.repository.PackagesRepo;
 import at.fhtw.mtcg_app.persistence.repository.PackagesRepoImpl;
+
 import com.fasterxml.jackson.core.type.TypeReference;
 
 import java.io.IOException;
@@ -16,9 +18,10 @@ import java.util.List;
 import java.util.UUID;
 
 public class PackageService extends AbstractService {
-    private final PackagesRepo packagesRepo = new PackagesRepoImpl();
+    private final PackagesRepo packagesRepo;
 
     public PackageService() {
+        packagesRepo = new PackagesRepoImpl(new UnitOfWork());
     }
 
     public Response createCards(Request request) {
@@ -34,10 +37,9 @@ public class PackageService extends AbstractService {
             newPackage.setInternalId(UUID.randomUUID().toString());
             newPackage.setCards(cards);
             packagesRepo.createPackage(newPackage);
-            // packagesRepo.createPackage(request, newPackage);
             for (Card card : newPackage.getCards()) {
                 packagesRepo.createCard(card); // Create each card
-                packagesRepo.associateCardToPackage(newPackage.getInternalId(), card.getCardId()); // Associate card with package
+                packagesRepo.associateCardToPackage(newPackage.getInternalId(), card.getCardId());
                 response = true;
             }
             if (!response)
