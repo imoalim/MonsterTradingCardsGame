@@ -10,9 +10,7 @@ import java.sql.SQLException;
 
 public interface PackagesRepo {
 
-    //Package createPackage(Request request, Package newPackage);
-
-    boolean acquireCards(Request request) throws ExceptionHandler;
+    boolean acquireCards(Request request) throws ExceptionHandler, SQLException;
 
     void createPackage(Package newPackage) throws SQLException;
 

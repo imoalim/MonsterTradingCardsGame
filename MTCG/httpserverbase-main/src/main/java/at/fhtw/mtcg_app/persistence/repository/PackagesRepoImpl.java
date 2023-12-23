@@ -3,12 +3,11 @@ package at.fhtw.mtcg_app.persistence.repository;
 import at.fhtw.mtcg_app.model.Card;
 import at.fhtw.mtcg_app.model.Package;
 import at.fhtw.mtcg_app.model.User;
-import at.fhtw.mtcg_app.persistence.DBUtils;
 import at.fhtw.httpserver.server.Request;
+import at.fhtw.mtcg_app.persistence.UnitOfWork;
 import at.fhtw.mtcg_app.service.AuthHandler;
 import at.fhtw.mtcg_app.service.ExceptionHandler;
 
-import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -18,73 +17,72 @@ public class PackagesRepoImpl implements PackagesRepo {
 
     private int userId;
     private int coins;
+    private final UnitOfWork unitOfWork;
+
+    public PackagesRepoImpl(UnitOfWork unitOfWork) {
+        this.unitOfWork = unitOfWork;
+    }
+
 
     @Override
     public void createPackage(Package newPackage) throws SQLException {
-        try (Connection connection = DBUtils.getConnection()) {
-            PreparedStatement statement = connection.prepareStatement(
-                    "INSERT INTO packages (internal_id) VALUES (?)");
+        try (PreparedStatement statement = this.unitOfWork.prepareStatement(
+                "INSERT INTO packages (internal_id) VALUES (?)")) {
             statement.setString(1, newPackage.getInternalId());
-            // Set other fields if necessary
             statement.executeUpdate();
+            this.unitOfWork.commitTransaction();
         }
     }
 
     @Override
     public void createCard(Card card) throws SQLException {
-        try (Connection connection = DBUtils.getConnection()) {
-            PreparedStatement statement = connection.prepareStatement(
-                    "INSERT INTO cards (card_id, name, damage) VALUES (?, ?, ?)");
+        try (PreparedStatement statement = this.unitOfWork.prepareStatement(
+                "INSERT INTO cards (card_id, name, damage) VALUES (?, ?, ?)")) {
             statement.setString(1, card.getCardId());
             statement.setString(2, card.getName());
             statement.setDouble(3, card.getDamage());
             statement.executeUpdate();
+            this.unitOfWork.commitTransaction();
         }
     }
 
     @Override
     public void associateCardToPackage(String internalId, String cardId) throws SQLException {
-        try (Connection connection = DBUtils.getConnection()) {
-            // Prepare a statement with a subquery to fetch the package_id using the internalId
-            PreparedStatement statement = connection.prepareStatement(
-                    "INSERT INTO PackageCards (package_id, card_id) VALUES ((SELECT package_id FROM packages WHERE internal_id = ?), ?)");
-
-            statement.setString(1, internalId);  // Set the internalId to find the package
-            statement.setString(2, cardId);      // Set the cardId
-
+        try (PreparedStatement statement = this.unitOfWork.prepareStatement(
+                "INSERT INTO PackageCards (package_id, card_id) VALUES ((SELECT package_id FROM packages WHERE internal_id = ?), ?)")
+        ) {
+            statement.setString(1, internalId);
+            statement.setString(2, cardId);
             statement.executeUpdate();
+            this.unitOfWork.commitTransaction();
         }
     }
+
 
     @Override
-    public boolean acquireCards(Request request) throws ExceptionHandler {
-        try (Connection connection = DBUtils.getConnection()) {
-            checkUserAuthentication(request, connection);
+    public boolean acquireCards(Request request) throws ExceptionHandler, SQLException {
 
-            int packageCost = 5; // Cost per package
-            int maxPackages = coins / packageCost; // Maximum packages the user can acquire
+        checkUserAuthentication(request);
 
-            if (maxPackages <= 0) {
-                throw new ExceptionHandler("Not enough coins");
-            }
-            acquirePackagesForUser(connection);
-            deductUserCoins(connection, packageCost);
-            return true;
-        } catch (SQLException ex) {
-            throw new RuntimeException(ex.getMessage(), ex);
+        int packageCost = 5; // Cost per package
+        int maxPackages = coins / packageCost; // Maximum packages the user can acquire
+
+        if (maxPackages <= 0) {
+            throw new ExceptionHandler("Not enough coins");
         }
+        acquirePackagesForUser();
+        deductUserCoins(packageCost);
+        return true;
     }
 
-    private boolean usernameFromTokenExists(Connection connection) throws SQLException {
+    private boolean usernameFromTokenExists() throws SQLException {
 
-        List<User> userList = DBUtils.readSpecificUserFromDB(connection, "users", AuthHandler.getUsernameFromToken());
+        List<User> userList = this.unitOfWork.readSpecificUserFromDB("users", AuthHandler.getUsernameFromToken());
 
 
         if (!userList.isEmpty()) {
             userId = Integer.parseInt(userList.get(0).getId());
             coins = userList.get(0).getCoins();
-            System.out.println("User ID: " + userId);
-
             return true;
         } else {
 
@@ -92,72 +90,57 @@ public class PackagesRepoImpl implements PackagesRepo {
         }
     }
 
-    private void checkUserAuthentication(Request request, Connection connection) throws SQLException, ExceptionHandler {
+    private void checkUserAuthentication(Request request) throws SQLException, ExceptionHandler {
         if (!AuthHandler.checkAuthFromHeader(request)) {
             throw new ExceptionHandler("Authentication failed");
         }
-        if (!usernameFromTokenExists(connection)) {
+        if (!usernameFromTokenExists()) {
             throw new ExceptionHandler("User not found");
         }
     }
 
-    private void deductUserCoins(Connection connection, int totalCost) throws SQLException {
-        PreparedStatement updateUsers = connection.prepareStatement(
+    private void deductUserCoins(int totalCost) throws SQLException {
+        PreparedStatement updateUsers = this.unitOfWork.prepareStatement(
                 "UPDATE public.users SET coins = coins - ? WHERE user_id = ?");
         updateUsers.setInt(1, totalCost);
         updateUsers.setInt(2, userId);
         updateUsers.executeUpdate();
+        this.unitOfWork.commitTransaction();
     }
 
-    private void acquirePackagesForUser(Connection connection) throws SQLException {
-        try {
-            connection.setAutoCommit(false);
+    private void acquirePackagesForUser() throws SQLException {
 
-            PreparedStatement getOneRandomPackage = connection.prepareStatement(
-                    "SELECT package_id FROM packages WHERE status = 'available' ORDER BY RANDOM() LIMIT 1");
+        try (PreparedStatement getOneRandomPackage = this.unitOfWork.prepareStatement(
+                "SELECT package_id FROM packages WHERE status = 'available' ORDER BY RANDOM() LIMIT 1"); ResultSet rs = getOneRandomPackage.executeQuery()) {
 
-            ResultSet rs = getOneRandomPackage.executeQuery();
             if (rs.next()) {
                 int packageId = rs.getInt("package_id");
-                recordTransaction(connection, userId, packageId);
-                updatePackageStatus(connection, packageId, "assigned");
-                connection.commit();
+                recordTransaction(userId, packageId);
+                updatePackageStatus(packageId, "assigned");
+                this.unitOfWork.commitTransaction();
             } else {
-                connection.rollback();
                 throw new SQLException("No available packages found");
             }
         } catch (SQLException ex) {
-            if (connection != null) {
-                connection.rollback();
-            }
+            this.unitOfWork.rollbackTransaction();
             throw ex;
-        } finally {
-            // Turn auto-commit back on after the transaction is complete
-            if (connection != null && !connection.getAutoCommit()) {
-                connection.setAutoCommit(true);
-            }
         }
     }
 
 
-    private void recordTransaction(Connection connection, int userId, int packageId) throws SQLException {
-        // Start transaction
-        connection.setAutoCommit(false);
-
+    private void recordTransaction(int userId, int packageId) throws SQLException {
         // Record the transaction
-        PreparedStatement insertTransaction = connection.prepareStatement(
+        PreparedStatement insertTransaction = this.unitOfWork.prepareStatement(
                 "INSERT INTO Transactions (user_id, package_id, status) VALUES (?, ?, ?)");
         insertTransaction.setInt(1, userId);
         insertTransaction.setInt(2, packageId);
         insertTransaction.setString(3, "success");
         insertTransaction.executeUpdate();
-
-        connection.commit(); // Commit transaction
     }
 
-    private void updatePackageStatus(Connection connection, int packageId, String newStatus) throws SQLException {
+    private void updatePackageStatus(int packageId, String newStatus) throws SQLException {
         // Update the package status
-        PreparedStatement updatePackageStatus = connection.prepareStatement(
+        PreparedStatement updatePackageStatus = this.unitOfWork.prepareStatement(
                 "UPDATE packages SET status = ? WHERE package_id = ?");
         updatePackageStatus.setString(1, newStatus);
         updatePackageStatus.setInt(2, packageId);
