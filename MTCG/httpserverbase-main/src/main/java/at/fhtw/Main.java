@@ -2,6 +2,7 @@ package at.fhtw;
 
 import at.fhtw.httpserver.server.Server;
 import at.fhtw.httpserver.utils.Router;
+import at.fhtw.mtcg_app.controller.CardsController;
 import at.fhtw.mtcg_app.controller.PackageController;
 import at.fhtw.mtcg_app.controller.SessionController;
 import at.fhtw.sampleapp.controller.EchoController;
@@ -26,6 +27,7 @@ public class Main {
         router.addService("/sessions", new SessionController());
         router.addService("/packages", new PackageController());
         router.addService("/transactions", new PackageController());
+        router.addService("/cards", new CardsController());
         router.addService("/echo", new EchoController());
 
         return router;
