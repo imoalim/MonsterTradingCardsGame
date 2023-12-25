@@ -1,7 +1,7 @@
 package at.fhtw.mtcg_app.service;
 
 import at.fhtw.httpserver.server.Request;
-import at.fhtw.mtcg_app.persistence.repository.Token;
+import at.fhtw.mtcg_app.persistence.Token;
 
 public class AuthHandler {
     private static String userToken;

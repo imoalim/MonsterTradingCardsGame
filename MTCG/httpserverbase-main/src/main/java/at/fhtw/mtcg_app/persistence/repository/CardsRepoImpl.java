@@ -20,10 +20,10 @@ public class CardsRepoImpl implements CardsRepo {
     @Override
     public List<Card> getUserCards(String username) {
         List<Card> cards = new ArrayList<>();
-        String sql = "SELECT c.* FROM cards c " +
-                "JOIN packagecards pc ON c.card_id = pc.card_id " +
-                "JOIN transactions t ON pc.package_id = t.package_id " +
-                "JOIN users u ON t.user_id = u.user_id " + // Join with users table
+        String sql = "SELECT c.* FROM public.card c " +
+                "JOIN public.package_card pc ON c.card_id = pc.card_id " +
+                "JOIN public.transaction t ON pc.package_id = t.package_id " +
+                "JOIN public.user u ON t.user_id = u.user_id " + // Join with users table
                 "WHERE u.username = ?"; // Filter on username
 
         try (PreparedStatement statement = this.unitOfWork.prepareStatement(sql)) {

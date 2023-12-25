@@ -8,10 +8,8 @@ public class User {
     }
 
     public User(String token, String id, String username, String password, int coins) {
-
         this.token = token;
         this.id = id;
-
         this.username = username;
         this.password = password;
         this.coins = coins;
@@ -29,17 +27,6 @@ public class User {
 
     @JsonAlias({"Coins"})
     private int coins;
-
-    private boolean userExists;
-
-
-    public void setUserExists(boolean userExists) {
-        this.userExists = userExists;
-    }
-
-    public boolean isUserExists() {
-        return userExists;
-    }
 
     public int getCoins() {
         return coins;
