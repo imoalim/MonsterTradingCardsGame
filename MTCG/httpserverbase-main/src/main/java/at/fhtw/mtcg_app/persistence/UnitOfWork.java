@@ -1,10 +1,7 @@
 package at.fhtw.mtcg_app.persistence;
 
-import at.fhtw.mtcg_app.model.User;
 
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
 
 public class UnitOfWork implements AutoCloseable {
 
@@ -76,50 +73,6 @@ public class UnitOfWork implements AutoCloseable {
         }
         throw new DataAccessException("UnitOfWork hat keine aktive Connection zur Verfügung");
     }
-
-    public List<User> readUsersFromDB(String tableName, String whereClause) throws SQLException {
-        Statement statement;
-        ResultSet rs = null;
-        List<User> userList = new ArrayList<>(); // Liste für Benutzerdaten
-        if (this.connection != null) {
-            try {
-                String query = String.format("SELECT * FROM %s WHERE %s", tableName, whereClause);
-                statement = this.connection.createStatement();
-                rs = statement.executeQuery(query);
-
-                while (rs.next()) {
-                    User user = new User(
-                            rs.getString("token"),
-                            rs.getString("user_id"),
-                            rs.getString("username"),
-                            rs.getString("password"),
-                            rs.getInt("coins")
-                    );
-                    userList.add(user); // Benutzer zur Liste hinzufügen
-                }
-
-            } catch (SQLException e) {
-                throw new SQLException(e);
-            } finally {
-                if (rs != null) {
-                    rs.close(); // ResultSet schließen
-                }
-            }
-            return userList;
-        }
-
-        throw new DataAccessException("UnitOfWork hat keine aktive Connection zur Verfügung");
-    }
-
-    public List<User> readAllUsersFromDB(String tableName) throws SQLException {
-        return readUsersFromDB(tableName, "1=1"); // 1=1 ist immer wahr, daher werden alle Datensätze ausgewählt
-    }
-
-    public List<User> readSpecificUserFromDB(String tableName, String userName) throws SQLException {
-        String whereClause = String.format("username = '%s'", userName);
-        return readUsersFromDB(tableName, whereClause);
-    }
-
     @Override
     public void close() throws Exception {
         this.finishWork();

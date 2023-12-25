@@ -7,18 +7,18 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.List;
 
-public class SessionRepositoryImpl implements SessionRepository {
-    private final UnitOfWork unitOfWork;
+public class SessionRepositoryImpl extends BaseRepo implements SessionRepository {
+
 
     public SessionRepositoryImpl(UnitOfWork unitOfWork) {
-        this.unitOfWork = unitOfWork;
+        super(unitOfWork);
     }
 
 
     @Override
     public boolean islogged(User newUser) throws SQLException {
 
-        List<User> userList = this.unitOfWork.readAllUsersFromDB("users");
+        List<User> userList = this.readAllUsersFromDB("public.user");
 
         boolean userExists = userList.stream()
                 .anyMatch(user -> user.getUsername().equals(newUser.getUsername()));
@@ -28,7 +28,7 @@ public class SessionRepositoryImpl implements SessionRepository {
         if (userExists && passwordIsValid) {
             String userToken = newUser.getUsername() + "-mtcgToken";
             PreparedStatement statement = this.unitOfWork.prepareStatement(
-                    "UPDATE public.users SET token = ? WHERE username = ?");
+                    "UPDATE public.user SET token = ? WHERE username = ?");
             statement.setString(1, userToken);
             statement.setString(2, newUser.getUsername());
             statement.executeUpdate();
