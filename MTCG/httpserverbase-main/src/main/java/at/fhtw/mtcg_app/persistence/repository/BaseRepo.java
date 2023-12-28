@@ -1,5 +1,6 @@
 package at.fhtw.mtcg_app.persistence.repository;
 
+import at.fhtw.mtcg_app.model.Card;
 import at.fhtw.mtcg_app.model.User;
 import at.fhtw.mtcg_app.persistence.UnitOfWork;
 
@@ -13,6 +14,24 @@ public abstract class BaseRepo {
     public BaseRepo(UnitOfWork unitOfWork) {
         this.unitOfWork = unitOfWork;
     }
+
+    protected Integer getUserIdByUsername(String tableName, String userName) throws SQLException {
+        String query = "SELECT user_id FROM " + tableName + " WHERE username = ?";
+        try (PreparedStatement preparedStatement = this.unitOfWork.prepareStatement(query)) {
+            preparedStatement.setString(1, userName);
+
+            try (ResultSet rs = preparedStatement.executeQuery()) {
+                if (rs.next()) {
+                    return rs.getInt("user_id");
+                } else {
+                    return null; // Or handle the case where the user is not found
+                }
+            }
+        } catch (SQLException e) {
+            throw new SQLException("Error fetching user ID from DB: " + e.getMessage(), e);
+        }
+    }
+
 
     protected List<User> readUsersFromDB(String tableName, String whereClause, List<Object> parameters) throws SQLException {
         List<User> userList = new ArrayList<>();
@@ -54,6 +73,32 @@ public abstract class BaseRepo {
         parameters.add(userName);
 
         return readUsersFromDB(tableName, whereClause, parameters);
+    }
+
+    protected List<Card> getUserCards(String username) {
+        List<Card> cards = new ArrayList<>();
+        String sql = "SELECT c.* FROM public.card c " +
+                "JOIN public.package_card pc ON c.card_id = pc.card_id " +
+                "JOIN public.transaction t ON pc.package_id = t.package_id " +
+                "JOIN public.user u ON t.user_id = u.user_id " + // Join with users table
+                "WHERE u.username = ?"; // Filter on username
+
+        try (PreparedStatement statement = this.unitOfWork.prepareStatement(sql)) {
+            statement.setString(1, username); // Set the username parameter
+            try (ResultSet resultSet = statement.executeQuery()) {
+                while (resultSet.next()) {
+                    Card card = new Card(
+                            resultSet.getString("card_id"),
+                            resultSet.getString("name"),
+                            resultSet.getDouble("damage")
+                    );
+                    cards.add(card);
+                }
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException("Error fetching user cards", e);
+        }
+        return cards;
     }
 
 }
