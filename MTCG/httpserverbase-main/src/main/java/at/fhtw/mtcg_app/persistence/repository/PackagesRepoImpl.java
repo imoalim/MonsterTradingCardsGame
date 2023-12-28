@@ -109,8 +109,8 @@ public class PackagesRepoImpl extends BaseRepo implements PackagesRepo {
 
     private void acquirePackagesForUser() throws SQLException {
 
-        try (PreparedStatement getOneRandomPackage = this.unitOfWork.prepareStatement(
-                "SELECT package_id FROM package WHERE status = 'available' ORDER BY RANDOM() LIMIT 1"); ResultSet rs = getOneRandomPackage.executeQuery()) {
+        try (PreparedStatement getOnePackage = this.unitOfWork.prepareStatement(
+                "SELECT package_id FROM package WHERE status = 'available' ORDER BY package_id LIMIT 1"); ResultSet rs = getOnePackage.executeQuery()) {
 
             if (rs.next()) {
                 int packageId = rs.getInt("package_id");
