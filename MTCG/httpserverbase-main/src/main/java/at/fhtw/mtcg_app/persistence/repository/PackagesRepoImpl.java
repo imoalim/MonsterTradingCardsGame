@@ -13,21 +13,20 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-public class PackagesRepoImpl implements PackagesRepo {
+public class PackagesRepoImpl extends BaseRepo implements PackagesRepo {
 
     private int userId;
     private int coins;
-    private final UnitOfWork unitOfWork;
 
     public PackagesRepoImpl(UnitOfWork unitOfWork) {
-        this.unitOfWork = unitOfWork;
+        super(unitOfWork);
     }
 
 
     @Override
     public void createPackage(Package newPackage) throws SQLException {
         try (PreparedStatement statement = this.unitOfWork.prepareStatement(
-                "INSERT INTO packages (internal_id) VALUES (?)")) {
+                "INSERT INTO package (internal_id) VALUES (?)")) {
             statement.setString(1, newPackage.getInternalId());
             statement.executeUpdate();
             this.unitOfWork.commitTransaction();
@@ -37,7 +36,7 @@ public class PackagesRepoImpl implements PackagesRepo {
     @Override
     public void createCard(Card card) throws SQLException {
         try (PreparedStatement statement = this.unitOfWork.prepareStatement(
-                "INSERT INTO cards (card_id, name, damage) VALUES (?, ?, ?)")) {
+                "INSERT INTO card (card_id, name, damage) VALUES (?, ?, ?)")) {
             statement.setString(1, card.getCardId());
             statement.setString(2, card.getName());
             statement.setDouble(3, card.getDamage());
@@ -49,7 +48,7 @@ public class PackagesRepoImpl implements PackagesRepo {
     @Override
     public void associateCardToPackage(String internalId, String cardId) throws SQLException {
         try (PreparedStatement statement = this.unitOfWork.prepareStatement(
-                "INSERT INTO PackageCards (package_id, card_id) VALUES ((SELECT package_id FROM packages WHERE internal_id = ?), ?)")
+                "INSERT INTO package_card (package_id, card_id) VALUES ((SELECT package_id FROM package WHERE internal_id = ?), ?)")
         ) {
             statement.setString(1, internalId);
             statement.setString(2, cardId);
@@ -77,7 +76,7 @@ public class PackagesRepoImpl implements PackagesRepo {
 
     private boolean usernameFromTokenExists() throws SQLException {
 
-        List<User> userList = this.unitOfWork.readSpecificUserFromDB("users", AuthHandler.getUsernameFromToken());
+        List<User> userList = this.readSpecificUserFromDB("public.user", AuthHandler.getUsernameFromToken());
 
 
         if (!userList.isEmpty()) {
@@ -101,7 +100,7 @@ public class PackagesRepoImpl implements PackagesRepo {
 
     private void deductUserCoins(int totalCost) throws SQLException {
         PreparedStatement updateUsers = this.unitOfWork.prepareStatement(
-                "UPDATE public.users SET coins = coins - ? WHERE user_id = ?");
+                "UPDATE public.user SET coins = coins - ? WHERE user_id = ?");
         updateUsers.setInt(1, totalCost);
         updateUsers.setInt(2, userId);
         updateUsers.executeUpdate();
@@ -110,8 +109,8 @@ public class PackagesRepoImpl implements PackagesRepo {
 
     private void acquirePackagesForUser() throws SQLException {
 
-        try (PreparedStatement getOneRandomPackage = this.unitOfWork.prepareStatement(
-                "SELECT package_id FROM packages WHERE status = 'available' ORDER BY RANDOM() LIMIT 1"); ResultSet rs = getOneRandomPackage.executeQuery()) {
+        try (PreparedStatement getOnePackage = this.unitOfWork.prepareStatement(
+                "SELECT package_id FROM package WHERE status = 'available' ORDER BY package_id LIMIT 1"); ResultSet rs = getOnePackage.executeQuery()) {
 
             if (rs.next()) {
                 int packageId = rs.getInt("package_id");
@@ -131,7 +130,7 @@ public class PackagesRepoImpl implements PackagesRepo {
     private void recordTransaction(int userId, int packageId) throws SQLException {
         // Record the transaction
         PreparedStatement insertTransaction = this.unitOfWork.prepareStatement(
-                "INSERT INTO Transactions (user_id, package_id, status) VALUES (?, ?, ?)");
+                "INSERT INTO transaction (user_id, package_id, status) VALUES (?, ?, ?)");
         insertTransaction.setInt(1, userId);
         insertTransaction.setInt(2, packageId);
         insertTransaction.setString(3, "success");
@@ -141,7 +140,7 @@ public class PackagesRepoImpl implements PackagesRepo {
     private void updatePackageStatus(int packageId, String newStatus) throws SQLException {
         // Update the package status
         PreparedStatement updatePackageStatus = this.unitOfWork.prepareStatement(
-                "UPDATE packages SET status = ? WHERE package_id = ?");
+                "UPDATE package SET status = ? WHERE package_id = ?");
         updatePackageStatus.setString(1, newStatus);
         updatePackageStatus.setInt(2, packageId);
         updatePackageStatus.executeUpdate();
