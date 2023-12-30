@@ -21,7 +21,7 @@ public class UsersController implements RestController {
     public Response handleRequest(Request request) {
         if (request.getMethod() == Method.GET &&
                 request.getPathParts().size() > 1) {
-            return this.usersService.getUser(request.getPathParts().get(1));
+            return this.usersService.getUser(request.getPathParts().get(1), request);
         } else if (request.getMethod() == Method.POST) {
             return this.usersService.addUser(request);
         } else if (request.getMethod() == Method.PUT) {

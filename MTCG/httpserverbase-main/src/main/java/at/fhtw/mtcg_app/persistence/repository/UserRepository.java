@@ -1,4 +1,5 @@
 package at.fhtw.mtcg_app.persistence.repository;
+import at.fhtw.httpserver.server.Request;
 import at.fhtw.mtcg_app.model.User;
 import at.fhtw.mtcg_app.model.UserData;
 import at.fhtw.mtcg_app.service.ExceptionHandler;
@@ -11,7 +12,7 @@ public interface UserRepository {
 
     Collection<User> findAllUsers();
 
-    User findByUsername(String username) throws SQLException;
+    UserData findByUsername(String username, Request request) throws Exception;
 
     boolean createUser(User newuser) throws SQLException, ExceptionHandler;
 
