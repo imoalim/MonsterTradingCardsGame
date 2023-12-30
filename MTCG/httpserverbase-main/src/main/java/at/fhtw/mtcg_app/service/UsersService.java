@@ -11,7 +11,6 @@ import at.fhtw.httpserver.server.Request;
 import at.fhtw.httpserver.server.Response;
 import at.fhtw.mtcg_app.model.User;
 
-import java.sql.SQLException;
 
 public class UsersService extends AbstractService {
 
@@ -21,18 +20,21 @@ public class UsersService extends AbstractService {
         userRepository = new UserRepositoryImpl(new UnitOfWork());
     }
     // GET /users/:id
-    public Response getUser(String username) {
-        User user;
+    public Response getUser(String username, Request request) {
+        UserData userData;
         try {
-            user = userRepository.findByUsername(username);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+            userData = userRepository.findByUsername(username, request);
+            String json = this.convertToJson(userData);
+            return new Response(HttpStatus.OK, ContentType.JSON, json);
+        } catch (Exception e) {
+            if (e.getMessage().equals("Access token is missing or invalid"))
+                return new Response(HttpStatus.FORBIDDEN, ContentType.JSON, e.getMessage());
+            if(e.getMessage().equals("Username doesn't match request header"))
+                return new Response(HttpStatus.FORBIDDEN, ContentType.JSON, e.getMessage());
+            if(e.getMessage().equals("User doesn't exist"))
+                return new Response(HttpStatus.NOT_FOUND, ContentType.JSON, e.getMessage());
         }
-        if (user == null) {
-            System.out.println("There is no user" + username);
-        }
-        String json = this.convertToJson(user);
-        return new Response(HttpStatus.OK, ContentType.JSON, json);
+        return new Response(HttpStatus.INTERNAL_SERVER_ERROR, ContentType.JSON, "Unexpected error");
     }
 
     // POST /users

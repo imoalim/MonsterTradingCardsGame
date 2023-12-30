@@ -1,8 +1,10 @@
 package at.fhtw.mtcg_app.persistence.repository;
 
+import at.fhtw.httpserver.server.Request;
 import at.fhtw.mtcg_app.model.User;
 import at.fhtw.mtcg_app.model.UserData;
 import at.fhtw.mtcg_app.persistence.UnitOfWork;
+import at.fhtw.mtcg_app.service.AuthHandler;
 import at.fhtw.mtcg_app.service.ExceptionHandler;
 
 import java.sql.*;
@@ -31,20 +33,27 @@ public class UserRepositoryImpl extends BaseRepo implements UserRepository {
     }
 
     @Override
-    public User findByUsername(String username) throws SQLException {
-        PreparedStatement statement = this.unitOfWork.prepareStatement("SELECT * FROM public.user WHERE username = ?");
-        statement.setString(1, username);
+    public UserData findByUsername(String username, Request request) throws Exception {
+        if(!this.checkIfUserExists(username)) throw new Exception("User doesn't exist");
+        if(!AuthHandler.checkAuthFromHeader(request)) throw new Exception("Access token is missing or invalid");
+        String tokenUsername = AuthHandler.getUsernameFromToken();
+        if (tokenUsername == null || !tokenUsername.equals(username)) {
+            throw new Exception("Username doesn't match request header");
+        }
+        Integer userId = this.getUserIdByUsername("public.user",username);
+        PreparedStatement statement = this.unitOfWork.prepareStatement("SELECT * FROM public.user_data WHERE user_id = ?");
+        statement.setInt(1, userId);
 
         ResultSet rs = statement.executeQuery();
 
-        User user = new User();
+        UserData userData = new UserData();
         while (rs.next()) {
-            user.setUsername(rs.getString("username"));
-            user.setPassword(rs.getString("password"));
-            user.setId(rs.getString("user_id"));
+            userData.setName(rs.getString("name"));
+            userData.setBio(rs.getString("bio"));
+            userData.setImage(rs.getString("image"));
         }
         rs.close();
-        return user;
+        return userData;
     }
 
 
@@ -72,19 +81,41 @@ public class UserRepositoryImpl extends BaseRepo implements UserRepository {
     @Override
     public boolean updateUser(String username, UserData newUserData) throws Exception {
         if (!checkIfUserExists(username)) throw new Exception("User not found");
-        String userId = findByUsername(username).getId();
-        if (insertIntoUserData(userId, newUserData)) {
+        Integer userId = this.getUserIdByUsername("public.user",username);
+        if (upsertUserData(userId, newUserData)) {
             userUpdated(userId);
             return true;
         }
         return false;
     }
+    private boolean upsertUserData(Integer userId, UserData newUserData) throws SQLException {
+        if (userDataExists(userId)) {
+            return updateUserData(userId, newUserData);
+        } else {
+            return insertUserData(userId, newUserData);
+        }
+    }
 
-    private void userUpdated(String userId) throws SQLException {
+
+    private boolean userDataExists(Integer userId) throws SQLException {
+        String sql = "SELECT COUNT(*) FROM public.user_data WHERE user_id = ?";
+        try (PreparedStatement statement = this.unitOfWork.prepareStatement(sql)) {
+            statement.setInt(1, userId);
+            try (ResultSet resultSet = statement.executeQuery()) {
+                if (resultSet.next()) {
+                    return resultSet.getInt(1) > 0;
+                }
+            }
+        }
+        return false;
+    }
+
+
+    private void userUpdated(Integer userId) throws SQLException {
         String sql = "UPDATE public.user SET user_data_updated = ? WHERE user_id = ?";
         try (PreparedStatement statement = this.unitOfWork.prepareStatement(sql)) {
             statement.setBoolean(1, true);
-            statement.setInt(2, Integer.parseInt(userId));
+            statement.setInt(2, userId);
             statement.executeUpdate();
             this.unitOfWork.commitTransaction();
         } catch (SQLException e) {
@@ -92,11 +123,25 @@ public class UserRepositoryImpl extends BaseRepo implements UserRepository {
             throw e;
         }
     }
-
-    private boolean insertIntoUserData(String userId, UserData newUserData) throws SQLException {
+    private boolean updateUserData(Integer userId, UserData newUserData) throws SQLException {
+        String sql = "UPDATE public.user_data SET name = ?, bio = ?, image = ? WHERE user_id = ?";
+        try (PreparedStatement statement = this.unitOfWork.prepareStatement(sql)) {
+            statement.setString(1, newUserData.getName());
+            statement.setString(2, newUserData.getBio());
+            statement.setString(3, newUserData.getImage());
+            statement.setInt(4, userId);
+            statement.executeUpdate();
+            this.unitOfWork.commitTransaction();
+            return true;
+        } catch (SQLException e) {
+            this.unitOfWork.rollbackTransaction();
+            throw e;
+        }
+    }
+    private boolean insertUserData(Integer userId, UserData newUserData) throws SQLException {
         String sql = "INSERT INTO public.user_data (user_id,name, bio, image) VALUES (?,?,?,?)";
         try (PreparedStatement statement = this.unitOfWork.prepareStatement(sql)) {
-            statement.setInt(1, Integer.parseInt(userId));
+            statement.setInt(1, userId);
             statement.setString(2, newUserData.getName());
             statement.setString(3, newUserData.getBio());
             statement.setString(4, newUserData.getImage());
