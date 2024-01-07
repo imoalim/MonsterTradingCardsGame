@@ -84,6 +84,7 @@ public class UserRepositoryImpl extends BaseRepo implements UserRepository {
         Integer userId = this.getUserIdByUsername("public.user",username);
         if (upsertUserData(userId, newUserData)) {
             userUpdated(userId);
+
             return true;
         }
         return false;
@@ -124,6 +125,13 @@ public class UserRepositoryImpl extends BaseRepo implements UserRepository {
         }
     }
     private boolean updateUserData(Integer userId, UserData newUserData) throws SQLException {
+
+        String sqlUpdateUserStats = "UPDATE public.user_stats SET name = ? WHERE user_id = ?";
+        try (PreparedStatement statementUpdateUserStats = this.unitOfWork.prepareStatement(sqlUpdateUserStats)) {
+            statementUpdateUserStats.setString(1, newUserData.getName());
+            statementUpdateUserStats.setInt(2, userId);
+            statementUpdateUserStats.executeUpdate();
+        }
         String sql = "UPDATE public.user_data SET name = ?, bio = ?, image = ? WHERE user_id = ?";
         try (PreparedStatement statement = this.unitOfWork.prepareStatement(sql)) {
             statement.setString(1, newUserData.getName());
@@ -138,14 +146,25 @@ public class UserRepositoryImpl extends BaseRepo implements UserRepository {
             throw e;
         }
     }
+
     private boolean insertUserData(Integer userId, UserData newUserData) throws SQLException {
-        String sql = "INSERT INTO public.user_data (user_id,name, bio, image) VALUES (?,?,?,?)";
-        try (PreparedStatement statement = this.unitOfWork.prepareStatement(sql)) {
-            statement.setInt(1, userId);
-            statement.setString(2, newUserData.getName());
-            statement.setString(3, newUserData.getBio());
-            statement.setString(4, newUserData.getImage());
-            statement.executeUpdate();
+        String sqlInsertUserData = "INSERT INTO public.user_data (user_id, name, bio, image) VALUES (?, ?, ?, ?)";
+        String sqlInsertUserStats = "INSERT INTO public.user_stats (name,user_id) VALUES (?,?)";
+
+        try (PreparedStatement statementInsertUserData = this.unitOfWork.prepareStatement(sqlInsertUserData)) {
+            statementInsertUserData.setInt(1, userId);
+            statementInsertUserData.setString(2, newUserData.getName());
+            statementInsertUserData.setString(3, newUserData.getBio());
+            statementInsertUserData.setString(4, newUserData.getImage());
+            statementInsertUserData.executeUpdate();
+
+            try (PreparedStatement statementInsertUserStats = this.unitOfWork.prepareStatement(sqlInsertUserStats)) {
+                statementInsertUserStats.setString(1, newUserData.getName());
+                statementInsertUserStats.setInt(2, userId);
+
+                statementInsertUserStats.executeUpdate();
+            }
+
             this.unitOfWork.commitTransaction();
             return true;
         } catch (SQLException e) {
@@ -153,5 +172,6 @@ public class UserRepositoryImpl extends BaseRepo implements UserRepository {
             throw e;
         }
     }
+
 }
 
