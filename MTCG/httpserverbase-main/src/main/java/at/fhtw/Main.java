@@ -26,6 +26,8 @@ public class Main {
         router.addService("/transactions", new PackageController());
         router.addService("/cards", new CardsController());
         router.addService("/deck", new DeckController());
+        router.addService("/stats", new BattleController());
+        router.addService("/scoreboard", new BattleController());
         router.addService("/echo", new EchoController());
 
         return router;
