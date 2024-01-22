@@ -17,14 +17,8 @@ public class BattleController implements RestController {
 
     @Override
     public Response handleRequest(Request request) {
-        if (request.getMethod() == Method.GET && request.getPathname().equals("/stats")) {
-            return this.battleService.showStats(request);
-        }
-        if (request.getMethod() == Method.GET && request.getPathname().equals("/scoreboard")) {
-            return this.battleService.showScoreboard(request);
-        }
-        if (request.getMethod() == Method.POST) {
-            //return this.battleService.startBattle(request);
+        if (request.getMethod() == Method.POST && request.getPathname().equals("/battles")) {
+            return this.battleService.handleBattleRequest(request);
         }
         return new Response(
                 HttpStatus.NOT_IMPLEMENTED,
@@ -32,4 +26,7 @@ public class BattleController implements RestController {
                 "[]"
         );
     }
+
+
+
 }
