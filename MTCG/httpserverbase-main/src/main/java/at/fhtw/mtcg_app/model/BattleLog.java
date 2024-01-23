@@ -1,8 +1,13 @@
 package at.fhtw.mtcg_app.model;
+
+import com.fasterxml.jackson.annotation.JsonAlias;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class BattleLog {
+
+    @JsonAlias({"roundResults", "ListOfRoundResults"})
     private final List<RoundResult> roundResults;
 
     public BattleLog() {
@@ -12,4 +17,5 @@ public class BattleLog {
     public void addRoundResult(RoundResult result) {
         roundResults.add(result);
     }
+
 }
