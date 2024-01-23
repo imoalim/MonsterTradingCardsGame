@@ -69,10 +69,4 @@ public class PackageService extends AbstractService {
         }
         return new Response(HttpStatus.INTERNAL_SERVER_ERROR, ContentType.JSON, "Unexpected error");
     }
-
-
-    //check if user is logged in
-    //POST request
-
-
 }

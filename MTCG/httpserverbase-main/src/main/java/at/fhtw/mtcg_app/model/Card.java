@@ -3,23 +3,46 @@ package at.fhtw.mtcg_app.model;
 import com.fasterxml.jackson.annotation.JsonAlias;
 
 public class Card {
+
     public Card(String cardId, String name, double damage) {
         this.cardId = cardId;
         this.name = name;
         this.damage = damage;
     }
 
-    public Card() {
+    public enum ElementType {
+        WATER, FIRE, NORMAL
+    }
 
+    public enum SpecialType {
+        GOBLINS, DRAGONS, WIZARD, ORKS, KNIGHTS, KRAKEN, ELVES, TROLL, NORMAL
+    }
+
+    private SpecialType specialType;
+    private ElementType elementType;
+
+    @JsonAlias({"Id"})
+    private String cardId;
+    @JsonAlias({"Name"})
+    private String name;
+    @JsonAlias({"Damage"})
+    private double damage;
+
+    public Card(String cardId, String name, double damage, ElementType elementType, SpecialType specialType) {
+        this.cardId = cardId;
+        this.name = name;
+        this.damage = damage;
+        this.elementType = elementType;
+        this.specialType = specialType;
+    }
+
+    public Card() {
     }
 
     public String getCardId() {
         return cardId;
     }
 
-    public void setCardId(String cardId) {
-        this.cardId = cardId;
-    }
 
     public String getName() {
         return name;
@@ -33,14 +56,19 @@ public class Card {
         return damage;
     }
 
-    public void setDamage(double damage) {
-        this.damage = damage;
+    public ElementType getElementType() {
+        return elementType;
     }
 
-    @JsonAlias({"Id"})
-    private String cardId; // Card ID
-    @JsonAlias({"Name"})
-    private String name;
-    @JsonAlias({"Damage"})
-    private double damage;
+    public void setElementType(ElementType elementType) {
+        this.elementType = elementType;
+    }
+
+    public SpecialType getSpecialType() {
+        return specialType;
+    }
+
+    public void setSpecialType(SpecialType specialType) {
+        this.specialType = specialType;
+    }
 }

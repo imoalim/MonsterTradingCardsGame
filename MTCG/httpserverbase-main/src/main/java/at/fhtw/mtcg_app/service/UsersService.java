@@ -62,6 +62,10 @@ public class UsersService extends AbstractService {
             if (!AuthHandler.checkAuthFromHeader(request))
                 return new Response(HttpStatus.UNAUTHORIZED, ContentType.JSON, "\t\n" +
                         "Access token is missing or invalid");
+            String tokenUsername = AuthHandler.getUsernameFromToken();
+            if (tokenUsername == null || !tokenUsername.equals(request.getPathParts().get(1))) {
+                return new Response(HttpStatus.FORBIDDEN, ContentType.JSON, "Username doesn't match request header");
+            }
             if (userRepository.updateUser(AuthHandler.getUsernameFromToken(), newUserData))
                 return new Response(HttpStatus.OK, ContentType.JSON, "User successfully updated.");
         } catch (Exception e) {
