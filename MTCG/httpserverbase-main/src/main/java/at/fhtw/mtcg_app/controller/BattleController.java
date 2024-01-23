@@ -28,10 +28,6 @@ public class BattleController implements RestController {
                 Request player1Request = requestList.get(0);
                 Request player2Request = requestList.get(1);
 
-                // Print the requests for debugging
-                System.out.println("Player 1 Request: " + player1Request.toString());
-                System.out.println("Player 2 Request: " + player2Request.toString());
-
                 // Clear the list to prepare for new requests
                 requestList.clear();
 

@@ -18,4 +18,7 @@ public class BattleLog {
         roundResults.add(result);
     }
 
+    public List<RoundResult> getRoundResults() {
+        return roundResults;
+    }
 }
