@@ -25,27 +25,27 @@ public class BattleService extends AbstractService{
         this.battleRepo = new BattleRepoImpl(new UnitOfWork());
     }
 
-    public Response handleBattleRequest(Request request) {
+    public Response handleBattleRequest(Request Player1request, Request player2Request) {
         try {
             // Step 1: Check the current battle state
             BattleStateEnum battleState = BattleStateEnum.WAITING_FOR_PLAYER1;
-            List<Card> monsterCards = new ArrayList<>();
-            List<Card> spellCards = new ArrayList<>();
+            List<Card> player1MonsterCards = new ArrayList<>();
+            List<Card> player1SpellCards = new ArrayList<>();
+            List<Card> player2MonsterCards = new ArrayList<>();
+            List<Card> player2SpellCards = new ArrayList<>();
 
             // Step 2: Process the request based on the current state
             switch (battleState.getState().getStateName()) {
                 case "WAITING_FOR_PLAYER1":
 
                     // Process Player 1 request
-                    player1 = setupPlayerData(request, monsterCards, spellCards, player1);
+                   setupPlayerData(Player1request, player1MonsterCards, player1SpellCards, player1);
                     // Move to the next state
                     battleState.setState("WAITING_FOR_PLAYER2");
-                    return new Response(HttpStatus.OK, ContentType.JSON, "Waiting for Player 2...");
-
                 case "WAITING_FOR_PLAYER2":
                     // Process Player 2 request
 
-                    player2 = setupPlayerData(request, monsterCards, spellCards, player2);
+                    setupPlayerData(player2Request, player2MonsterCards, player2SpellCards, player2);
 
                     // Move to the next state
                     battleState.setState("BATTLE_IN_PROGRESS");
@@ -80,7 +80,7 @@ public class BattleService extends AbstractService{
         }
     }
 
-    private Player setupPlayerData(Request request, List<Card> monsterCards, List<Card> spellCards, Player player) throws SQLException {
+    private void setupPlayerData(Request request, List<Card> monsterCards, List<Card> spellCards, Player player) throws SQLException {
         battleRepo.splitCards(request, monsterCards, spellCards);
         Integer userId = battleRepo.getUserId();
         player.setPlayerId(userId);
@@ -88,7 +88,6 @@ public class BattleService extends AbstractService{
         player.setPlayerName(name);
         player.setMonsterCards(monsterCards);
         player.setSpellCards(spellCards);
-        return player;
     }
     private BattleLog performBattle(Player player1, Player player2) {
         BattleLog battleLog = new BattleLog();
@@ -126,7 +125,7 @@ public class BattleService extends AbstractService{
     }
 
     private void updatePlayerStats(Player player1, Player player2, Card player1Card, Card player2Card, RoundResult result, List<Card> player1AllCards, List<Card> player2AllCards) {
-        if(result.getWinner().equalsIgnoreCase("PLAYER 1")){
+        if(result.winner().equalsIgnoreCase("PLAYER 1")){
             //takes the player2 card out of his deck and wins it for himself
             player2AllCards.remove(player2Card);
             player1AllCards.add(player2Card);
@@ -134,7 +133,7 @@ public class BattleService extends AbstractService{
             battleRepo.playerWon(player1);
             battleRepo.playerLoss(player2);
 
-        }else if(result.getWinner().equalsIgnoreCase("PLAYER 2")){
+        }else if(result.winner().equalsIgnoreCase("PLAYER 2")){
             player1AllCards.remove(player1Card);
             player2AllCards.add(player1Card);
             battleRepo.playerWon(player2);
