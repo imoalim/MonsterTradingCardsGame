@@ -13,10 +13,13 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import java.util.List;
 
 public class DeckService extends AbstractService {
-    private final DeckRepo deckRepo;
+    private DeckRepo deckRepo;
 
     public DeckService() {
         deckRepo = new DeckRepoImpl(new UnitOfWork());
+    }
+    public void setDeckRepoForTesting(DeckRepo deckRepoMock) {
+        this.deckRepo = deckRepoMock;
     }
 
     public Response showConfiguredDeck(Request request) {
@@ -58,4 +61,6 @@ public class DeckService extends AbstractService {
             };
         }
     }
+
+
 }

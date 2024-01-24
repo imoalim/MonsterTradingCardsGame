@@ -10,11 +10,14 @@ import at.fhtw.mtcg_app.service.GameStatsService;
 
 public class GameStatsController implements RestController {
 
-    private final GameStatsService gameStatsService;
+    private  GameStatsService gameStatsService;
 
 
     public GameStatsController() {
         this.gameStatsService = new GameStatsService();
+    }
+    public void setGameStatsServiceForTesting(GameStatsService gameStatsServiceMock) {
+        this.gameStatsService = gameStatsServiceMock;
     }
 
     @Override
@@ -31,4 +34,6 @@ public class GameStatsController implements RestController {
                 "[]"
         );
     }
+
+
 }
