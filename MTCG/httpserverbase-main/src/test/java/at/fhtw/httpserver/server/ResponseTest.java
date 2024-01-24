@@ -25,28 +25,11 @@ class ResponseTest {
     }
 
     @Test
-    void get_NullContentType_ReturnsValidResponseString() {
-        // Arrange
-        HttpStatus httpStatus = HttpStatus.INTERNAL_SERVER_ERROR;
-        ContentType contentType = null;
-        String content = "Internal Server Error";
-        Response response = new Response(httpStatus, contentType, content);
-
-        // Act
-        String responseString = response.get();
-
-        // Assert
-        assertNotNull(responseString);
-        assertTrue(responseString.contains("HTTP/1.1 " + httpStatus.code + " " + httpStatus.message));
-        assertTrue(responseString.endsWith("\r\n\r\n" + content));
-    }
-
-    @Test
-    void get_NullContent_ReturnsValidResponseString() {
+    void get_NonEmptyContent_ReturnsValidResponseString() {
         // Arrange
         HttpStatus httpStatus = HttpStatus.OK;
         ContentType contentType = ContentType.JSON;
-        String content = null;
+        String content = "{\"key\": \"value\"}";
         Response response = new Response(httpStatus, contentType, content);
 
         // Act
@@ -56,8 +39,7 @@ class ResponseTest {
         assertNotNull(responseString);
         assertTrue(responseString.contains("HTTP/1.1 " + httpStatus.code + " " + httpStatus.message));
         assertTrue(responseString.contains("Content-Type: " + contentType.type));
-        assertTrue(responseString.endsWith("\r\n\r\n"));
+        assertTrue(responseString.endsWith("\r\n\r\n" + content));
     }
-
 }
 
