@@ -14,10 +14,14 @@ import at.fhtw.mtcg_app.model.User;
 
 public class UsersService extends AbstractService {
 
-    private final UserRepository userRepository;
+    private UserRepository userRepository;
 
     public UsersService() {
         userRepository = new UserRepositoryImpl(new UnitOfWork());
+    }
+    // Package-private method for testing
+    public void setUserRepositoryForTesting(UserRepository userRepository) {
+        this.userRepository = userRepository;
     }
     // GET /users/:id
     public Response getUser(String username, Request request) {
