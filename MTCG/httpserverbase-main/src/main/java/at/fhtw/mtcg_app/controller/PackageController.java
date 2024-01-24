@@ -10,10 +10,13 @@ import at.fhtw.mtcg_app.service.PackageService;
 
 public class PackageController implements RestController {
 
-    private final PackageService packageService;
+    private PackageService packageService;
 
     public PackageController() {
         this.packageService = new PackageService();
+    }
+    public void setPackageServiceForTesting(PackageService packageServiceMock) {
+        this.packageService = packageServiceMock;
     }
 
     @Override
@@ -30,4 +33,6 @@ public class PackageController implements RestController {
                 "[]"
         );
     }
+
+
 }

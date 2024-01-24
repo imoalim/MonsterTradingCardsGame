@@ -9,10 +9,13 @@ import at.fhtw.httpserver.server.RestController;
 import at.fhtw.mtcg_app.service.DeckService;
 
 public class DeckController implements RestController {
-    private final DeckService deckService;
+    private DeckService deckService;
 
     public DeckController() {
         this.deckService = new DeckService();
+    }
+    public void setDeckServiceForTesting(DeckService deckServiceMock) {
+        this.deckService = deckServiceMock;
     }
 
     @Override
@@ -28,5 +31,7 @@ public class DeckController implements RestController {
                 "[]"
         );
     }
+
+
 }
 

@@ -22,7 +22,7 @@ public class BattleController implements RestController {
         this.requestList = Collections.synchronizedList(new ArrayList<>());
     }
 
-    private Response processRequests() {
+    public Response processRequests() {
         synchronized (requestList) {
             if (requestList.size() == 2) {
                 Request player1Request = requestList.get(0);

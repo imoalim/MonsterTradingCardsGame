@@ -80,7 +80,7 @@ public class BattleService extends AbstractService{
         }
     }
 
-    private void setupPlayerData(Request request, List<Card> monsterCards, List<Card> spellCards, Player player) throws SQLException {
+    public void setupPlayerData(Request request, List<Card> monsterCards, List<Card> spellCards, Player player) throws SQLException {
         battleRepo.splitCards(request, monsterCards, spellCards);
         Integer userId = battleRepo.getUserId();
         player.setPlayerId(userId);
@@ -89,7 +89,7 @@ public class BattleService extends AbstractService{
         player.setMonsterCards(monsterCards);
         player.setSpellCards(spellCards);
     }
-    private BattleLog performBattle(Player player1, Player player2) {
+    public BattleLog performBattle(Player player1, Player player2) {
         BattleLog battleLog = new BattleLog();
 
         for (int round = 1; round <= 100; round++) {
@@ -211,21 +211,27 @@ public class BattleService extends AbstractService{
         };
     }
     private void setElementAndSpecialTypes(Card player1Card, Card player2Card) {
+        if (player1Card != null) {
+            setElementType(player1Card);
+            setSpecialType(player1Card);
+        }
 
-        setElementType(player1Card);
-        setSpecialType(player1Card);
-
-        setElementType(player2Card);
-        setSpecialType(player2Card);
-
+        if (player2Card != null) {
+            setElementType(player2Card);
+            setSpecialType(player2Card);
+        }
     }
 
     private void setElementType(Card card) {
-        card.setElementType(getElementType(card.getName()));
+        if (card != null) {
+            card.setElementType(getElementType(card.getName()));
+        }
     }
 
     private void setSpecialType(Card card) {
-        card.setSpecialType(getSpecialType(card.getName()));
+        if (card != null) {
+            card.setSpecialType(getSpecialType(card.getName()));
+        }
     }
 
     private Card.ElementType getElementType(String cardName) {
